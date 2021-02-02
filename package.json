@@ -1,6 +1,9 @@
 {
   "name": "status-page",
   "version": "0.1.0",
+  "description": "A uptime status page based on the UptimeRobot API.",
+  "license": "MIT",
+  "author": "Lifeni",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,8 +11,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@geist-ui/react": "^2.1.0-canary.2",
+    "@geist-ui/react-icons": "^1.0.1",
+    "@types/styled-components": "^5.1.7",
+    "dayjs": "^1.10.4",
     "next": "10.0.6",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "babel-plugin-styled-components": "^1.12.0",
+    "sass": "^1.32.5",
+    "typescript": "^4.1.3"
   }
 }
