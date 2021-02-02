@@ -1,24 +1,7 @@
-import {
-  Row,
-  Col,
-  Spacer,
-  Button,
-  Card,
-  Badge,
-  Text,
-  Link,
-  Description,
-  useTheme,
-} from '@geist-ui/react'
-import {
-  Github,
-  Activity,
-  CheckInCircleFill,
-  XCircleFill,
-} from '@geist-ui/react-icons'
-
-import Logs from './Logs'
+import { Badge, Col, Link, Row, Spacer, Text } from '@geist-ui/react'
+import { CheckInCircleFill, XCircleFill } from '@geist-ui/react-icons'
 import config from '../config'
+import Logs from './Logs'
 
 const monitorType = {
   1: 'HTTP(s)',

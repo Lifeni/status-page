@@ -1,4 +1,4 @@
-import { Row, Text, Spacer, Image } from '@geist-ui/react'
+import { Image, Row, Spacer, Text } from '@geist-ui/react'
 import config from '../config'
 
 export default function Header() {

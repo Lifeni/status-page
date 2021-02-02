@@ -1,9 +1,9 @@
-import { Col, Row, Tooltip, Description } from '@geist-ui/react'
-import styled from 'styled-components'
+import { Description, Tooltip } from '@geist-ui/react'
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
 import { ReactElement, useEffect, useState } from 'react'
+import styled from 'styled-components'
 
 dayjs.extend(duration)
 dayjs.extend(isSameOrBefore)
@@ -25,6 +25,11 @@ const StatusBlockWrapper = styled.div`
   margin: 0 2px;
   flex-grow: 1;
   border-radius: 2px;
+  overflow: hidden;
+
+  @media (max-width: 425px) {
+    margin: 0 1px;
+  }
 `
 
 const Container = styled.div`

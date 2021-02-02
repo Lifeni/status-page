@@ -1,12 +1,13 @@
-import { Row, Col, Grid, Spacer, Card, Divider } from '@geist-ui/react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Monitor from '../components/Monitor'
-import Status from '../components/Status'
-import { useEffect, useState } from 'react'
-import config from '../config'
-
+import { Card, Col, Divider, Grid, Row, Spacer } from '@geist-ui/react'
 import { GetServerSideProps } from 'next'
+
+import styled from 'styled-components'
+
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import Monitor from '../components/Monitor'
+
+import config from '../config'
 
 export const getServerSideProps: GetServerSideProps = async context => {
   let status = 'unknown'
@@ -29,6 +30,14 @@ export const getServerSideProps: GetServerSideProps = async context => {
   return { props: { status, monitors } }
 }
 
+const StyledCard = styled(Card)`
+  @media (max-width: 425px) {
+    .content {
+      padding: 8pt;
+    }
+  }
+`
+
 export default function Home(props: { status: any; monitors: any }) {
   const { status, monitors } = props
 
@@ -39,9 +48,9 @@ export default function Home(props: { status: any; monitors: any }) {
       </Grid>
       <Grid xs={24} sm={22} md={20} lg={14} xl={12}>
         <Row>
-          <Spacer x={1} />
+          <Spacer x={0.5} />
           <Col span={24}>
-            <Card>
+            <StyledCard>
               {monitors.length === 0
                 ? 'Loading ...'
                 : monitors.map((monitor, index) => (
@@ -52,8 +61,9 @@ export default function Home(props: { status: any; monitors: any }) {
                       {index !== monitors.length - 1 ? <Divider y={1} /> : null}
                     </div>
                   ))}
-            </Card>
+            </StyledCard>
           </Col>
+          <Spacer x={0.5} />
         </Row>
       </Grid>
       <Grid xs={24}>

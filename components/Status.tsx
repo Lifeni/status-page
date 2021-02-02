@@ -1,7 +1,5 @@
-import { Row, Text, Spacer, Image, Button, Fieldset } from '@geist-ui/react'
-import { RefreshCw, CheckInCircleFill } from '@geist-ui/react-icons'
-
-import config from '../config'
+import { Button, Fieldset, Spacer } from '@geist-ui/react'
+import { CheckInCircleFill, RefreshCw } from '@geist-ui/react-icons'
 
 export default function Status() {
   return (

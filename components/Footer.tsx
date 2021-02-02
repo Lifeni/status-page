@@ -1,5 +1,5 @@
-import { Row, Spacer, Button, Link } from '@geist-ui/react'
-import { Github, Activity } from '@geist-ui/react-icons'
+import { Button, Link, Row, Spacer } from '@geist-ui/react'
+import { Activity, Github } from '@geist-ui/react-icons'
 import config from '../config'
 
 export default function Footer() {
