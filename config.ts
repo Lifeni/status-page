@@ -16,7 +16,6 @@ export default {
       monitor_link: true,
       monitor_type: true,
     },
-    oneline_mode: false,
   },
   key: {
     uptimerobot: 'ur1047124-c17f135f8eab023bb4b6987b',

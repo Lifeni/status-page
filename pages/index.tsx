@@ -1,4 +1,6 @@
-import { Card, Col, Divider, Grid, Row, Spacer } from '@geist-ui/react'
+import { Card, Col, Divider, Grid, Row, Spacer, Text } from '@geist-ui/react'
+import { CheckInCircleFill, XCircleFill } from '@geist-ui/react-icons'
+
 import { GetServerSideProps } from 'next'
 
 import styled from 'styled-components'
@@ -9,7 +11,7 @@ import Monitor from '../components/Monitor'
 
 import config from '../config'
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async () => {
   let status = 'unknown'
   let monitors = null
   await fetch('https://api.uptimerobot.com/v2/getMonitors', {
@@ -51,9 +53,60 @@ export default function Home(props: { status: any; monitors: any }) {
           <Spacer x={0.5} />
           <Col span={24}>
             <StyledCard>
+              <Row>
+                <Spacer y={0.5} />
+              </Row>
+              <Row align="middle">
+                <Spacer x={1} />
+                {status === 'ok' ? (
+                  <>
+                    <CheckInCircleFill size={28} color="#3bd671" />
+                    <Spacer x={0.75} />
+                    <Text
+                      h3
+                      style={{
+                        margin: 0,
+                        whiteSpace: 'nowrap',
+                        color: '#3bd671',
+                      }}
+                    >
+                      All is well
+                    </Text>
+                  </>
+                ) : (
+                  <>
+                    <XCircleFill size={28} color="#f44336" />
+                    <Spacer x={0.75} />
+                    <Text
+                      h3
+                      style={{
+                        margin: 0,
+                        whiteSpace: 'nowrap',
+                        color: '#f44336',
+                      }}
+                    >
+                      Something is wrong
+                    </Text>
+                  </>
+                )}
+                <Spacer x={1} />
+              </Row>
+              <Row>
+                <Spacer y={0.5} />
+              </Row>
+            </StyledCard>
+          </Col>
+          <Spacer x={0.5} />
+        </Row>
+        <Spacer y={1} />
+
+        <Row>
+          <Spacer x={0.5} />
+          <Col span={24}>
+            <StyledCard>
               {monitors.length === 0
                 ? 'Loading ...'
-                : monitors.map((monitor, index) => (
+                : monitors.map((monitor: Monitor, index: number) => (
                     <div key={monitor.id}>
                       <Card.Content>
                         <Monitor data={monitor} />

@@ -22,7 +22,7 @@ const monitorStatus = {
 const monitorColor = {
   0: '#FFC107',
   1: '#000000',
-  2: '#4CAF50',
+  2: '#3bd671',
   8: '#FFC107',
   9: '#f44336',
 }
@@ -83,7 +83,14 @@ export default function Monitor(props: { data: Monitor }) {
               <>
                 <XCircleFill color={monitorColor[data.status] || '#000000'} />
                 <Spacer x={0.5} />
-                <Text h4 style={{ margin: 0, whiteSpace: 'nowrap' }}>
+                <Text
+                  h4
+                  style={{
+                    margin: 0,
+                    whiteSpace: 'nowrap',
+                    color: monitorColor[data.status] || '#000000',
+                  }}
+                >
                   {monitorStatus[data.status]}
                 </Text>
               </>
