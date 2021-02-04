@@ -1,32 +1,36 @@
-import { Button, Link, Row, Spacer } from '@geist-ui/react'
-import { Activity, Github } from '@geist-ui/react-icons'
+import { Button, Link, Row, Spacer, ButtonGroup } from '@geist-ui/react'
+import { BarChart2, Github, Link as LinkIcon } from '@geist-ui/react-icons'
 import config from '../config'
 
 export default function Footer() {
   return (
     <footer>
-      <Spacer y={2} />
+      <Spacer y={1} />
       <Row justify="center">
         <Spacer x={0.5} />
-        {config?.page?.footer?.github ? (
-          <>
-            <Button icon={<Github />} auto>
-              <Link href={config?.page?.footer?.github}>GitHub</Link>
-            </Button>
-            <Spacer x={0.5} />
-          </>
-        ) : null}
-
-        {config?.page?.footer?.uptimerobot ? (
-          <>
-            <Button icon={<Activity />} auto>
-              <Link href={config?.page?.footer?.uptimerobot}>UptimeRobot</Link>
-            </Button>
-            <Spacer x={0.5} />
-          </>
-        ) : null}
+        <ButtonGroup>
+          {config?.page?.footer?.map(link => (
+            <>
+              <Button
+                icon={
+                  link.name === 'GitHub' ? (
+                    <Github />
+                  ) : link.name === 'UptimeRobot' ? (
+                    <BarChart2 />
+                  ) : (
+                    <LinkIcon />
+                  )
+                }
+                auto
+              >
+                <Link href={link.url}>{link.name}</Link>
+              </Button>
+              <Spacer x={0.5} />
+            </>
+          ))}
+        </ButtonGroup>
       </Row>
-      <Spacer y={2} />
+      <Spacer y={1} />
     </footer>
   )
 }

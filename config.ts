@@ -6,16 +6,20 @@ export default {
       text: 'Status Page',
       logo: 'https://file.lifeni.life/status/site.png',
     },
-    footer: {
-      github: 'https://github.com/Lifeni/status-page',
-      uptimerobot: 'https://uptimerobot.com/',
-    },
-  },
-  style: {
-    components: {
-      monitor_link: true,
-      monitor_type: true,
-    },
+    footer: [
+      {
+        name: 'GitHub',
+        url: 'https://github.com/Lifeni/status-page',
+      },
+      {
+        name: 'UptimeRobot',
+        url: 'https://uptimerobot.com/',
+      },
+      {
+        name: 'Blog',
+        url: 'https://lifeni.life/',
+      },
+    ],
   },
   key: {
     uptimerobot: 'ur1047124-c17f135f8eab023bb4b6987b',

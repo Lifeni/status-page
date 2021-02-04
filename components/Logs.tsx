@@ -27,8 +27,8 @@ const StatusBlockWrapper = styled.div`
   border-radius: 2px;
   overflow: hidden;
 
-  @media (max-width: 425px) {
-    margin: 0 1px;
+  .tooltip {
+    width: 100%;
   }
 `
 
@@ -51,20 +51,28 @@ const monitorStatus = {
 }
 
 const monitorColor = {
-  down: '#f44336',
-  up: '#3bd671',
+  down: '#FF9800',
+  up: '#28a745',
   paused: '#FFC107',
   started: '#EEEEEE',
 }
 
 export default function Logs(props: { logs: Array<MonitorLog> }) {
   const { logs } = props
-  const blockSize = 50
   const [timeline, setTimeline] = useState<Map<string, MonitorBlock>>(new Map())
   const [timeblock, setTimeblock] = useState<Array<ReactElement>>([])
   const [loading, setLoading] = useState(true)
 
+  let blockSize = 50
+
   useEffect(() => {
+    const width = window.innerWidth
+    if (width <= 425) {
+      blockSize = 30
+    } else if (width <= 768) {
+      blockSize = 40
+    }
+
     logs
       .sort((a: MonitorLog, b: MonitorLog) => {
         return a.datetime - b.datetime
@@ -110,10 +118,7 @@ export default function Logs(props: { logs: Array<MonitorLog> }) {
       .reverse()
       .map(([day, data]) => (
         <StatusBlockWrapper key={day}>
-          <Tooltip
-            text={<Description title={day} content={data.detail} />}
-            style={{ width: '100%' }}
-          >
+          <Tooltip text={<Description title={day} content={data.detail} />}>
             <StatusBlock status={monitorStatus[data.type]} />
           </Tooltip>
         </StatusBlockWrapper>
@@ -123,7 +128,7 @@ export default function Logs(props: { logs: Array<MonitorLog> }) {
       for (let i = 0; i < total; i++) {
         array.push(
           <StatusBlockWrapper key={i}>
-            <Tooltip text="No Data" style={{ width: '100%' }}>
+            <Tooltip text="No Data">
               <StatusBlock status={'null'} />
             </Tooltip>
           </StatusBlockWrapper>
