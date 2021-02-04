@@ -4,6 +4,7 @@ import {
   ExternalLink,
   XCircleFill,
 } from '@geist-ui/react-icons'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Logs from './Logs'
 
@@ -35,13 +36,31 @@ const StyledRow = styled(Row)`
   }
 `
 
+const StyledText = styled(Text)`
+  margin: 0;
+  white-space: nowrap;
+`
+
 export default function Monitor(props: { data: Monitor }) {
   const { data } = props
+  const [upRate, setUpRate] = useState(0)
+
+  useEffect(() => {
+    let upTime = 0
+    let totalTime = 0
+    data.logs.forEach(log => {
+      if (log.type === 2) {
+        upTime += log.duration
+      }
+      totalTime += log.duration
+    })
+    setUpRate(upTime / totalTime)
+  }, [])
 
   return (
     <>
       <Row>
-        <Col span={16}>
+        <Col>
           <StyledRow align="middle">
             <Text h4>{data.friendly_name}</Text>
             <Spacer x={0.25} />
@@ -53,26 +72,23 @@ export default function Monitor(props: { data: Monitor }) {
             </Tooltip>
           </StyledRow>
         </Col>
-        <Col span={8}>
+        <Col>
           <Row align="middle" justify="end">
-            {data.status === 2 ? (
-              <CheckInCircleFill
-                color={monitorColor[data.status] || '#000000'}
-              />
-            ) : (
-              <XCircleFill color={monitorColor[data.status] || '#000000'} />
-            )}
+            <StyledText h4 style={{ color: monitorColor[data.status] }}>
+              {Math.round(upRate * 10000) / 100 + '%'}
+            </StyledText>
             <Spacer x={0.5} />
-            <Text
-              h4
-              style={{
-                margin: 0,
-                whiteSpace: 'nowrap',
-                color: monitorColor[data.status] || '#000000',
-              }}
-            >
+
+            {data.status === 2 ? (
+              <CheckInCircleFill color={monitorColor[data.status]} />
+            ) : (
+              <XCircleFill color={monitorColor[data.status]} />
+            )}
+
+            <Spacer x={0.5} />
+            <StyledText h4 style={{ color: monitorColor[data.status] }}>
               {monitorStatus[data.status]}
-            </Text>
+            </StyledText>
           </Row>
         </Col>
       </Row>

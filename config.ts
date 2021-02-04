@@ -15,10 +15,6 @@ export default {
         name: 'UptimeRobot',
         url: 'https://uptimerobot.com/',
       },
-      {
-        name: 'Blog',
-        url: 'https://lifeni.life/',
-      },
     ],
   },
   key: {
