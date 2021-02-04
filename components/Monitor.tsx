@@ -1,4 +1,4 @@
-import { Col, Link, Row, Spacer, Text, Tooltip } from '@geist-ui/react'
+import { Link, Row, Spacer, Text, Tooltip } from '@geist-ui/react'
 import {
   CheckInCircleFill,
   ExternalLink,
@@ -39,6 +39,16 @@ const StyledRow = styled(Row)`
 const StyledText = styled(Text)`
   margin: 0;
   white-space: nowrap;
+
+  @media (max-width: 425px) {
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 380px) {
+    &.small {
+      display: none;
+    }
+  }
 `
 
 export default function Monitor(props: { data: Monitor }) {
@@ -59,38 +69,35 @@ export default function Monitor(props: { data: Monitor }) {
 
   return (
     <>
-      <Row>
-        <Col>
-          <StyledRow align="middle">
-            <Text h4>{data.friendly_name}</Text>
-            <Spacer x={0.25} />
+      <Row justify="space-between">
+        <StyledRow align="middle">
+          <StyledText h4>{data.friendly_name}</StyledText>
+          <Spacer x={0.25} />
 
-            <Tooltip text={data.url}>
-              <Link href={data.url} target="_blank" block aria-label={data.url}>
-                <ExternalLink size="18" />
-              </Link>
-            </Tooltip>
-          </StyledRow>
-        </Col>
-        <Col>
-          <Row align="middle" justify="end">
-            <StyledText h4 style={{ color: monitorColor[data.status] }}>
-              {Math.round(upRate * 10000) / 100 + '%'}
-            </StyledText>
-            <Spacer x={0.5} />
+          <Tooltip text={data.url}>
+            <Link href={data.url} target="_blank" block aria-label={data.url}>
+              <ExternalLink size="18" />
+            </Link>
+          </Tooltip>
+        </StyledRow>
 
-            {data.status === 2 ? (
-              <CheckInCircleFill color={monitorColor[data.status]} />
-            ) : (
-              <XCircleFill color={monitorColor[data.status]} />
-            )}
+        <Row align="middle" justify="end">
+          <StyledText h4 className="small" style={{ color: '#e0e0e0' }}>
+            {Math.round(upRate * 10000) / 100 + '%'}
+          </StyledText>
+          <Spacer x={0.5} />
 
-            <Spacer x={0.5} />
-            <StyledText h4 style={{ color: monitorColor[data.status] }}>
-              {monitorStatus[data.status]}
-            </StyledText>
-          </Row>
-        </Col>
+          {data.status === 2 ? (
+            <CheckInCircleFill color={monitorColor[data.status]} />
+          ) : (
+            <XCircleFill color={monitorColor[data.status]} />
+          )}
+
+          <Spacer x={0.5} />
+          <StyledText h4 style={{ color: monitorColor[data.status] }}>
+            {monitorStatus[data.status]}
+          </StyledText>
+        </Row>
       </Row>
       <Spacer y={0.75} />
       <Row justify="end">

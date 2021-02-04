@@ -30,6 +30,8 @@ const StyledRow = styled(Row)`
   h3 {
     margin: 0;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   @media (max-width: 425px) {
