@@ -18,7 +18,7 @@ const monitorStatus = {
 
 const monitorColor = {
   0: '#FFC107',
-  1: '#000000',
+  1: '#e0e0e0',
   2: '#28a745',
   8: '#FFC107',
   9: '#FF9800',
@@ -59,10 +59,15 @@ export default function Monitor(props: { data: Monitor }) {
     let upTime = 0
     let totalTime = 0
     data.logs.forEach(log => {
+      console.log(log)
+
       if (log.type === 2) {
         upTime += log.duration
       }
-      totalTime += log.duration
+
+      if (log.type === 1 || log.type === 2) {
+        totalTime += log.duration
+      }
     })
     setUpRate(upTime / totalTime)
   }, [])
@@ -71,14 +76,13 @@ export default function Monitor(props: { data: Monitor }) {
     <>
       <Row justify="space-between">
         <StyledRow align="middle">
-          <StyledText h4>{data.friendly_name}</StyledText>
-          <Spacer x={0.25} />
-
           <Tooltip text={data.url}>
             <Link href={data.url} target="_blank" block aria-label={data.url}>
               <ExternalLink size="18" />
             </Link>
           </Tooltip>
+          <Spacer x={0.25} />
+          <StyledText h4>{data.friendly_name}</StyledText>
         </StyledRow>
 
         <Row align="middle" justify="end">

@@ -22,7 +22,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
     .then(res => res.json())
     .then(data => {
       status = data.stat
-      monitors = data.monitors
+      monitors = data.monitors.sort(
+        (a: { friendly_name: number }, b: { friendly_name: number }) => {
+          return a.friendly_name - b.friendly_name
+        }
+      )
     })
 
   return { props: { status, monitors } }
