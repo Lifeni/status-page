@@ -13,7 +13,12 @@ export default function Header() {
       {config?.page?.header?.logo ? (
         <>
           <Row justify="center">
-            <Image width={96} height={96} src={config?.page?.header?.logo} />
+            <Image
+              width={96}
+              height={96}
+              src={config?.page?.header?.logo}
+              disableSkeleton={true}
+            />
           </Row>
           <Spacer y={1} />
         </>

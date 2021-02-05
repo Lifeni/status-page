@@ -8,13 +8,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Logs from './Logs'
 
-const monitorStatus = {
-  0: 'Paused',
-  1: 'Not checked yet',
-  2: 'Up',
-  8: 'Seems down',
-  9: 'Down',
-}
+import { useTranslation } from 'react-i18next'
 
 const monitorColor = {
   0: '#FFC107',
@@ -55,12 +49,12 @@ export default function Monitor(props: { data: Monitor }) {
   const { data } = props
   const [upRate, setUpRate] = useState(0)
 
+  const { t } = useTranslation()
+
   useEffect(() => {
     let upTime = 0
     let totalTime = 0
     data.logs.forEach(log => {
-      console.log(log)
-
       if (log.type === 2) {
         upTime += log.duration
       }
@@ -77,7 +71,12 @@ export default function Monitor(props: { data: Monitor }) {
       <Row justify="space-between">
         <StyledRow align="middle">
           <Tooltip text={data.url}>
-            <Link href={data.url} target="_blank" block aria-label={data.url}>
+            <Link
+              href={data.type === 3 ? `http://${data.url}` : data.url}
+              target="_blank"
+              block
+              aria-label={data.url}
+            >
               <ExternalLink size="18" />
             </Link>
           </Tooltip>
@@ -99,7 +98,7 @@ export default function Monitor(props: { data: Monitor }) {
 
           <Spacer x={0.5} />
           <StyledText h4 style={{ color: monitorColor[data.status] }}>
-            {monitorStatus[data.status]}
+            {t(`status-${data.status}`)}
           </StyledText>
         </Row>
       </Row>

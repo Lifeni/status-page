@@ -64,6 +64,16 @@ export default function Logs(props: { logs: Array<MonitorLog> }) {
   const [loading, setLoading] = useState(true)
 
   let blockSize = 50
+  const placeholder = []
+  for (let i = 0; i < blockSize; i++) {
+    placeholder.push(
+      <StatusBlockWrapper key={i}>
+        <Tooltip text="No Data">
+          <StatusBlock status={'null'} />
+        </Tooltip>
+      </StatusBlockWrapper>
+    )
+  }
 
   useEffect(() => {
     const width = window.innerWidth
@@ -123,6 +133,7 @@ export default function Logs(props: { logs: Array<MonitorLog> }) {
           </Tooltip>
         </StatusBlockWrapper>
       ))
+
     if (timeline.size < blockSize) {
       const total = blockSize - timeline.size
       for (let i = 0; i < total; i++) {
@@ -139,5 +150,5 @@ export default function Logs(props: { logs: Array<MonitorLog> }) {
     setTimeblock(array)
   }, [])
 
-  return <Container>{loading ? 'Loading' : timeblock}</Container>
+  return <Container>{loading ? placeholder : timeblock}</Container>
 }

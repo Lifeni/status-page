@@ -6,20 +6,35 @@ import Document, {
   NextScript,
 } from 'next/document'
 import { CssBaseline } from '@geist-ui/react'
+import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
-    const styles = CssBaseline.flush()
+    const sheet = new ServerStyleSheet()
+    const originalRenderPage = ctx.renderPage
 
-    return {
-      ...initialProps,
-      styles: (
-        <>
-          {initialProps.styles}
-          {styles}
-        </>
-      ),
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+        })
+
+      const initialProps = await Document.getInitialProps(ctx)
+      const styles = CssBaseline.flush()
+
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {styles}
+
+            {sheet.getStyleElement()}
+          </>
+        ),
+      }
+    } finally {
+      sheet.seal()
     }
   }
 

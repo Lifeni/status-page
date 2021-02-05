@@ -1,0 +1,9 @@
+{
+  "global-status-ok": "All Systems Operational",
+  "global-status-error":"Some Systems Are Not Available",
+  "status-0":"Paused",
+  "status-1":"Not checked yet",
+  "status-2":"Up",
+  "status-8":"Seems down",
+  "status-9":"Down"
+}

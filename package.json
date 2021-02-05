@@ -15,9 +15,12 @@
     "@geist-ui/react-icons": "^1.0.1",
     "@types/styled-components": "^5.1.7",
     "dayjs": "^1.10.4",
+    "i18next": "^19.8.7",
+    "i18next-browser-languagedetector": "^6.0.1",
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-i18next": "^11.8.5",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 import { Card, Row, Spacer, Text } from '@geist-ui/react'
 import { Check, X } from '@geist-ui/react-icons'
 import styled from 'styled-components'
+import { useTranslation } from 'react-i18next'
 
 interface StatusProps {
   status: string
@@ -34,6 +35,10 @@ const StyledRow = styled(Row)`
     text-overflow: ellipsis;
   }
 
+  svg {
+    stroke-width: 2.5;
+  }
+
   @media (max-width: 425px) {
     h3 {
       font-size: 1.25rem;
@@ -45,8 +50,10 @@ const StyledRow = styled(Row)`
   }
 `
 
-export default function Status(props: { status: string }) {
+const Status = (props: { status: string }) => {
   const { status } = props
+  const { t } = useTranslation()
+
   return (
     <StyledCard status={status}>
       <Row>
@@ -58,13 +65,13 @@ export default function Status(props: { status: string }) {
           <>
             <Check size={36} />
             <Spacer x={0.75} />
-            <Text h3>All Systems Operational</Text>
+            <Text h3>{t('global-status-ok')}</Text>
           </>
         ) : (
           <>
             <X size={36} />
             <Spacer x={0.75} />
-            <Text h3>Something is Wrong</Text>
+            <Text h3>{t('global-status-error')}</Text>
           </>
         )}
         <Spacer x={1} />
@@ -75,3 +82,5 @@ export default function Status(props: { status: string }) {
     </StyledCard>
   )
 }
+
+export default Status
