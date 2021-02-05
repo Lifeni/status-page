@@ -1,8 +1,14 @@
-import { GeistProvider, CssBaseline } from '@geist-ui/react'
+import { CssBaseline, GeistProvider } from '@geist-ui/react'
 import Head from 'next/head'
-
-import '../styles/style.scss'
+import { createGlobalStyle } from 'styled-components'
 import config from '../config'
+
+const GlobalStyle = createGlobalStyle`
+ body {
+  width: 100%;
+  min-height: 100vh;
+}
+`
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,6 +24,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <GeistProvider>
         <CssBaseline />
+        <GlobalStyle />
         <Component {...pageProps} />
       </GeistProvider>
     </>

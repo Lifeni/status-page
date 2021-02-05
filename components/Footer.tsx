@@ -1,4 +1,4 @@
-import { Button, Link, Row, Spacer, ButtonGroup } from '@geist-ui/react'
+import { Button, ButtonGroup, Link, Row, Spacer } from '@geist-ui/react'
 import { BarChart2, Github, Link as LinkIcon } from '@geist-ui/react-icons'
 import config from '../config'
 

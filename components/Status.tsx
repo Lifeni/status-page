@@ -1,7 +1,7 @@
 import { Card, Row, Spacer, Text } from '@geist-ui/react'
 import { Check, X } from '@geist-ui/react-icons'
-import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
 
 interface StatusProps {
   status: string

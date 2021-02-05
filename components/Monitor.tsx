@@ -5,10 +5,9 @@ import {
   XCircleFill,
 } from '@geist-ui/react-icons'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import Logs from './Logs'
-
-import { useTranslation } from 'react-i18next'
 
 const monitorColor = {
   0: '#FFC107',

@@ -1,6 +1,6 @@
 import { Card, Col, Divider, Grid, Row, Spacer } from '@geist-ui/react'
-import { GetServerSideProps } from 'next'
 import i18n from 'i18next'
+import { GetServerSideProps } from 'next'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -8,7 +8,6 @@ import Monitor from '../components/Monitor'
 import Status from '../components/Status'
 import config from '../config'
 import '../i18n/config'
-import Head from 'next/head'
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
   i18n.changeLanguage(ctx.locale)

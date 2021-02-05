@@ -1,3 +1,4 @@
+import { CssBaseline } from '@geist-ui/react'
 import Document, {
   DocumentContext,
   Head,
@@ -5,7 +6,6 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
-import { CssBaseline } from '@geist-ui/react'
 import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
