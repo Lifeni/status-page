@@ -18,6 +18,7 @@ export default function Header() {
               height={96}
               src={config?.page?.header?.logo}
               disableSkeleton={true}
+              alt="Page Logo"
             />
           </Row>
           <Spacer y={1} />

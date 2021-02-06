@@ -75,6 +75,7 @@ export default function Monitor(props: { data: Monitor }) {
               target="_blank"
               block
               aria-label={data.url}
+              rel="noopener noreferrer"
             >
               <ExternalLink size="18" />
             </Link>
