@@ -4,6 +4,7 @@
 
 <h1 align="center">Status Page</h1>
 <p align="center">一个基于 UptimeRobot API 的状态监控页面</p>
+<p align="center"><a href="README.md">English</a> | 中文</p>
 
 ## 演示
 
@@ -22,7 +23,7 @@
 ### 手动部署
 
 1. Fork 这个仓库
-2. 修改项目根目录下的 `config.ts` 文件，不要忘记替换 [UptimeRobot 的 Key](https://uptimerobot.com/dashboard.php#mySettings) 
+2. 修改项目根目录下的 `config.ts` 文件，不要忘记替换 [UptimeRobot 的 Key](https://uptimerobot.com/dashboard.php#mySettings)
 3. 提交并推送你的修改
 4. 部署到 Vercel 或者其他平台
 

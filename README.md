@@ -4,6 +4,7 @@
 
 <h1 align="center">Status Page</h1>
 <p align="center">A uptime status page based on the UptimeRobot API</p>
+<p align="center">English | <a href="README.zh-CN.md">中文</a></p>
 
 ## Demo
 
