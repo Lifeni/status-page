@@ -10,7 +10,7 @@ export default {
       },
     },
     footer: {
-      enabled: false,
+      enabled: true,
       links: [
         {
           name: 'GitHub',
