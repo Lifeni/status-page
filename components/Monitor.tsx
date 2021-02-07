@@ -12,7 +12,7 @@ import Logs from './Logs'
 const monitorColor = {
   0: '#FFC107',
   1: '#e0e0e0',
-  2: '#28a745',
+  2: '#37d07b',
   8: '#FFC107',
   9: '#FF9800',
 }
@@ -73,14 +73,14 @@ export default function Monitor(props: { data: Monitor }) {
             <Link
               href={data.type === 3 ? `http://${data.url}` : data.url}
               target="_blank"
-              block
+              color
               aria-label={data.url}
               rel="noopener noreferrer"
             >
               <ExternalLink size="18" />
             </Link>
           </Tooltip>
-          <Spacer x={0.25} />
+          <Spacer x={0.5} />
           <StyledText h4>{data.friendly_name}</StyledText>
         </StyledRow>
 
@@ -89,7 +89,6 @@ export default function Monitor(props: { data: Monitor }) {
             {Math.round(upRate * 10000) / 100 + '%'}
           </StyledText>
           <Spacer x={0.5} />
-
           {data.status === 2 ? (
             <CheckInCircleFill color={monitorColor[data.status]} />
           ) : (

@@ -10,20 +10,20 @@ export default function Header() {
   return (
     <header>
       <Spacer y={4} />
-      {config?.page?.header?.logo ? (
+      {config?.page?.header?.logo?.show && (
         <>
           <Row justify="center">
             <Image
-              width={96}
-              height={96}
-              src={config?.page?.header?.logo}
+              width={120}
+              height={120}
+              src={config?.page?.header?.logo?.url || '/logo.svg'}
               disableSkeleton={true}
               alt="Page Logo"
             />
           </Row>
-          <Spacer y={1} />
+          <Spacer y={1.5} />
         </>
-      ) : null}
+      )}
       <Row justify="center">
         <StyledText h1 size="2rem">
           {config?.page?.header?.text}

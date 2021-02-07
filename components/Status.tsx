@@ -17,7 +17,7 @@ const StyledCard = styled(Card)<StatusProps>`
   .content {
     color: #ffffff;
     background-color: ${props =>
-      props.status === 'ok' ? '#28a745' : '#FF9800'};
+      props.status === 'ok' ? '#37d07b' : '#FF9800'};
   }
 
   @media (max-width: 425px) {

@@ -52,7 +52,7 @@ const monitorStatus = {
 
 const monitorColor = {
   down: '#FF9800',
-  up: '#28a745',
+  up: '#37d07b',
   paused: '#FFC107',
   started: '#EEEEEE',
 }

@@ -4,7 +4,10 @@ export default {
     description: 'A uptime status page based on the UptimeRobot API.',
     header: {
       text: 'Status Page',
-      logo: 'https://file.lifeni.life/status/site.png',
+      logo: {
+        show: true,
+        url: '', // default: /logo.svg
+      },
     },
     footer: {
       enabled: false,
