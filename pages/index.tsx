@@ -25,7 +25,12 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   })
     .then(res => res.json())
     .then(data => {
-      status = data.stat
+      // console.log(data)
+      status =
+        data.stat === 'ok' &&
+        data.monitors.every(
+          (monitor: { status: number }) => monitor.status === 2
+        )
       monitors = data.monitors.sort(
         (a: { friendly_name: number }, b: { friendly_name: number }) => {
           return a.friendly_name - b.friendly_name
@@ -44,7 +49,7 @@ const StyledCard = styled(Card)`
   }
 `
 
-export default function Home(props: { status: any; monitors: any }) {
+export default function Home(props: { status: boolean; monitors: any }) {
   const { status, monitors } = props
 
   return (

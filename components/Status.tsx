@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 interface StatusProps {
-  status: string
+  status: boolean
 }
 
 const StyledCard = styled(Card)<StatusProps>`
@@ -16,8 +16,7 @@ const StyledCard = styled(Card)<StatusProps>`
 
   .content {
     color: #ffffff;
-    background-color: ${props =>
-      props.status === 'ok' ? '#37d07b' : '#FF9800'};
+    background-color: ${props => (props.status ? '#37d07b' : '#FF9800')};
   }
 
   @media (max-width: 425px) {
@@ -50,7 +49,7 @@ const StyledRow = styled(Row)`
   }
 `
 
-const Status = (props: { status: string }) => {
+const Status = (props: { status: boolean }) => {
   const { status } = props
   const { t } = useTranslation()
 
@@ -61,7 +60,7 @@ const Status = (props: { status: string }) => {
       </Row>
       <StyledRow align="middle">
         <Spacer x={1} />
-        {status === 'ok' ? (
+        {status ? (
           <>
             <Check size={36} />
             <Spacer x={0.75} />
