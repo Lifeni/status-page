@@ -1,10 +1,9 @@
 import {
   Card,
-  Row,
+  GeistUIThemesPalette,
   Spacer,
   Text,
   useTheme,
-  GeistUIThemesPalette,
 } from '@geist-ui/react'
 import { Check, X } from '@geist-ui/react-icons'
 import { useTranslation } from 'react-i18next'

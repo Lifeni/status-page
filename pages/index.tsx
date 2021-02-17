@@ -1,7 +1,6 @@
-import { Card, Col, Grid, Row, Spacer } from '@geist-ui/react'
+import { Card, Grid, Spacer } from '@geist-ui/react'
 import i18n from 'i18next'
 import { GetServerSideProps } from 'next'
-import styled from 'styled-components'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Monitor from '../components/Monitor'
@@ -45,14 +44,28 @@ export default function Home(props: { status: boolean; monitors: any }) {
 
   return (
     <>
-      <Grid.Container justify="center">
+      <Grid.Container direction="column" alignItems="center" justify="center">
         <Grid xs={24}>
           <Header />
         </Grid>
-        <Grid xs={24} sm={24} md={20} lg={16} xl={12}>
+        <Grid
+          xs={24}
+          sm={24}
+          md={20}
+          lg={14}
+          xl={12}
+          style={{ width: '100%', maxWidth: '900px' }}
+        >
           <Status status={status ? 'true' : 'false'} />
         </Grid>
-        <Grid xs={24} sm={24} md={20} lg={16} xl={12}>
+        <Grid
+          xs={24}
+          sm={24}
+          md={20}
+          lg={14}
+          xl={12}
+          style={{ width: '100%', maxWidth: '900px' }}
+        >
           <Spacer y={1} />
           <Grid.Container gap={2} justify="flex-start">
             {monitors.length === 0
