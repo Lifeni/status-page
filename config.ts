@@ -1,16 +1,16 @@
 export default {
   page: {
-    title: 'Status Page',
-    description: 'A uptime status page based on the UptimeRobot API.',
+    title: 'Status Page | 记录干杯',
+    description: 'A status page based on the UptimeRobot API.',
     header: {
       text: 'Status Page',
       logo: {
         show: true,
-        url: '', // default: /logo.svg
+        url: 'https://file.lifeni.life/status/site.svg',
       },
     },
     footer: {
-      enabled: true,
+      enabled: false,
       links: [
         {
           name: 'GitHub',
