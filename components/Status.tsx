@@ -27,13 +27,13 @@ const Container = styled(Card)<StatusProps>`
     overflow: hidden;
     text-overflow: ellipsis;
     color: ${props =>
-      props.status === 'true' ? props.palette.success : props.palette.warning};
+      props.status === 'true' ? props.palette.success : props.palette.error};
   }
 
   svg {
     stroke-width: 2.5;
     stroke: ${props =>
-      props.status === 'true' ? props.palette.success : props.palette.warning};
+      props.status === 'true' ? props.palette.success : props.palette.error};
   }
 `
 
@@ -45,7 +45,7 @@ const Status = (props: { status: string }) => {
   return (
     <Container status={status} palette={palette}>
       <Spacer x={0.25} />
-      {status ? (
+      {status === 'true' ? (
         <>
           <Check size={36} />
           <Spacer x={1} />
