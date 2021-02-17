@@ -1,7 +1,7 @@
 export default {
   page: {
     title: 'Status Page',
-    description: 'A uptime status page based on the UptimeRobot API.',
+    description: 'A status page based on the UptimeRobot API.',
     header: {
       text: 'Status Page',
       logo: {
