@@ -19,7 +19,7 @@
 
 可以通过修改项目根目录下的 `config.ts` 文件来生成自己的状态监控页面。
 
-如果对我的项目不满意，也可以试试 [yb/uptime-status](https://github.com/yb/uptime-status) 或者 [UptimeRobot 自带的 Status Page](https://uptimerobot.com/status-page/) 。
+如果对这个的项目不满意，也可以试试 [yb/uptime-status](https://github.com/yb/uptime-status) 。
 
 ## 演示
 
