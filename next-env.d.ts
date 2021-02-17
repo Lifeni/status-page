@@ -1,7 +1,7 @@
 /// <reference types="next" />
 /// <reference types="next/types/global" />
 
-interface Monitor {
+interface IMonitor {
   id: number
   friendly_name: string
   url: string
@@ -15,11 +15,11 @@ interface Monitor {
   interval: number
   status: number
   create_datetime: number
-  logs: Array<MonitorLog>
+  logs: Array<IMonitorLog>
   lastLogTypeBeforeStartDate: {}
 }
 
-interface MonitorLog {
+interface IMonitorLog {
   datetime: number
   duration: number
   id: number
@@ -30,7 +30,7 @@ interface MonitorLog {
   type: number
 }
 
-interface MonitorBlock {
+interface IMonitorBlock {
   type: number
   detail: string
   startTime: number

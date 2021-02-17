@@ -6,6 +6,21 @@
 <p align="center">一个基于 UptimeRobot API 的状态监控页面</p>
 <p align="center"><a href="README.md">English</a> | 中文</p>
 
+- [介绍](#介绍)
+- [演示](#演示)
+- [部署](#部署)
+  - [部署在 Vercel 上](#部署在-vercel-上)
+  - [手动部署](#手动部署)
+- [开源协议](#开源协议)
+
+## 介绍
+
+这是一个基于 UptimeRobot API 的状态监控页面。
+
+可以通过修改项目根目录下的 `config.ts` 文件来生成自己的状态监控页面。
+
+如果对我的项目不满意，也可以试试 [yb/uptime-status](https://github.com/yb/uptime-status) 或者 [UptimeRobot 自带的 Status Page](https://uptimerobot.com/status-page/) 。
+
 ## 演示
 
 演示地址：[https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life) 。
@@ -20,12 +35,17 @@
 
 你需要在环境变量中配置 [UptimeRobot 的 Key](https://uptimerobot.com/dashboard.php#mySettings) 。
 
+> 提示：使用这种方法部署暂时无法修改图标、页面标题等元素。
+
 ### 手动部署
 
-1. Fork 这个仓库
-2. 修改项目根目录下的 `config.ts` 文件，不要忘记替换 [UptimeRobot 的 Key](https://uptimerobot.com/dashboard.php#mySettings)
-3. 提交并推送你的修改
-4. 部署到 Vercel 或者其他平台
+1. Fork 或者 Clone 这个仓库，并下载到本地。
+
+2. 修改项目根目录下的 `config.ts` 文件，不要忘记替换 [UptimeRobot 的 Key](https://uptimerobot.com/dashboard.php#mySettings)。
+
+3. （可选）提交并推送你的修改。
+
+4. 部署到 Vercel 或者其他平台。
 
 ## 开源协议
 

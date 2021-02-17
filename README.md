@@ -3,12 +3,27 @@
 </p>
 
 <h1 align="center">Status Page</h1>
-<p align="center">A uptime status page based on the UptimeRobot API</p>
+<p align="center">A status page based on the UptimeRobot API</p>
 <p align="center">English | <a href="README.zh-CN.md">中文</a></p>
+
+- [Introduction](#introduction)
+- [Demo](#demo)
+- [Deployment](#deployment)
+  - [Vercel](#vercel)
+  - [Manual Deployment](#manual-deployment)
+- [License](#license)
+
+## Introduction
+
+This is a status monitoring page based on UptimeRobot API.
+
+You can generate your own status monitoring page by modifying the `config.ts` file in the project root directory.
+
+If you are not satisfied with my project, you can also try [yb/uptime-status](https://github.com/yb/uptime-status) or [Status Page that comes with UptimeRobot](https://uptimerobot.com/status-page/).
 
 ## Demo
 
-See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life) .
+See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life).
 
 ## Deployment
 
@@ -22,10 +37,13 @@ You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard
 
 ### Manual Deployment
 
-1. Fork this Repo
-2. Modify the `config.ts` file in the project root directory, Don't forget to replace [the Key of UptimeRobot](https://uptimerobot.com/dashboard.php#mySettings)
-3. Commit and push your changes
-4. Deploy to Vercel or other platforms
+1. Fork or Clone this repository and download it locally.
+
+2. Modify the `config.ts` file in the project root directory, Don't forget to replace [the Key of UptimeRobot](https://uptimerobot.com/dashboard.php#mySettings).
+
+3. (Optional) Commit and push your changes.
+
+4. Deploy to Vercel or other platforms.
 
 ## License
 

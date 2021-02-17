@@ -1,4 +1,4 @@
-import { Link, Row, Spacer, Text, Tooltip } from '@geist-ui/react'
+import { Link, Row, Spacer, Text, Tooltip, useTheme } from '@geist-ui/react'
 import {
   CheckInCircleFill,
   ExternalLink,
@@ -8,14 +8,6 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import Logs from './Logs'
-
-const monitorColor = {
-  0: '#FFC107',
-  1: '#e0e0e0',
-  2: '#37d07b',
-  8: '#FFC107',
-  9: '#FF9800',
-}
 
 const StyledRow = styled(Row)`
   h4 {
@@ -32,23 +24,22 @@ const StyledRow = styled(Row)`
 const StyledText = styled(Text)`
   margin: 0;
   white-space: nowrap;
-
-  @media (max-width: 425px) {
-    font-size: 1.125rem;
-  }
-
-  @media (max-width: 380px) {
-    &.small {
-      display: none;
-    }
-  }
 `
 
-export default function Monitor(props: { data: Monitor }) {
+export default function Monitor(props: { data: IMonitor }) {
   const { data } = props
   const [upRate, setUpRate] = useState(0)
 
   const { t } = useTranslation()
+  const { palette } = useTheme()
+
+  const monitorColor = {
+    0: palette.warning,
+    1: palette.foreground,
+    2: palette.success,
+    8: palette.warning,
+    9: palette.error,
+  }
 
   useEffect(() => {
     let upTime = 0
@@ -81,11 +72,17 @@ export default function Monitor(props: { data: Monitor }) {
             </Link>
           </Tooltip>
           <Spacer x={0.5} />
-          <StyledText h4>{data.friendly_name}</StyledText>
+          <StyledText h4 style={{ color: palette.foreground }}>
+            {data.friendly_name}
+          </StyledText>
         </StyledRow>
 
         <Row align="middle" justify="end">
-          <StyledText h4 className="small" style={{ color: '#e0e0e0' }}>
+          <StyledText
+            h4
+            className="small"
+            style={{ color: palette.foreground }}
+          >
             {Math.round(upRate * 10000) / 100 + '%'}
           </StyledText>
           <Spacer x={0.5} />

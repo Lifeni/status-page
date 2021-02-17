@@ -1,4 +1,4 @@
-import { Card, Col, Divider, Grid, Row, Spacer } from '@geist-ui/react'
+import { Card, Col, Grid, Row, Spacer } from '@geist-ui/react'
 import i18n from 'i18next'
 import { GetServerSideProps } from 'next'
 import styled from 'styled-components'
@@ -25,7 +25,6 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   })
     .then(res => res.json())
     .then(data => {
-      // console.log(data)
       status =
         data.stat === 'ok' &&
         data.monitors.every(
@@ -41,14 +40,6 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   return { props: { status, monitors } }
 }
 
-const StyledCard = styled(Card)`
-  @media (max-width: 425px) {
-    .content {
-      padding: 8pt;
-    }
-  }
-`
-
 export default function Home(props: { status: boolean; monitors: any }) {
   const { status, monitors } = props
 
@@ -58,36 +49,24 @@ export default function Home(props: { status: boolean; monitors: any }) {
         <Grid xs={24}>
           <Header />
         </Grid>
-        <Grid xs={24} sm={22} md={20} lg={14} xl={12}>
-          <Row>
-            <Spacer x={1} />
-            <Col span={24}>
-              <Status status={status} />
-            </Col>
-            <Spacer x={1} />
-          </Row>
+        <Grid xs={24} sm={24} md={20} lg={16} xl={12}>
+          <Status status={status ? 'true' : 'false'} />
+        </Grid>
+        <Grid xs={24} sm={24} md={20} lg={16} xl={12}>
           <Spacer y={1} />
-
-          <Row>
-            <Spacer x={1} />
-            <Col span={24}>
-              <StyledCard>
-                {monitors.length === 0
-                  ? 'Loading ...'
-                  : monitors.map((monitor: Monitor, index: number) => (
-                      <div key={monitor.id}>
-                        <Card.Content>
-                          <Monitor data={monitor} />
-                        </Card.Content>
-                        {index !== monitors.length - 1 ? (
-                          <Divider y={1} />
-                        ) : null}
-                      </div>
-                    ))}
-              </StyledCard>
-            </Col>
-            <Spacer x={1} />
-          </Row>
+          <Grid.Container gap={2} justify="flex-start">
+            {monitors.length === 0
+              ? 'Loading ...'
+              : monitors.map((monitor: IMonitor) => (
+                  <Grid xs={24} sm={12} key={monitor.id}>
+                    <Card>
+                      <Card.Content>
+                        <Monitor data={monitor} />
+                      </Card.Content>
+                    </Card>
+                  </Grid>
+                ))}
+          </Grid.Container>
         </Grid>
         <Grid xs={24}>
           <Footer />

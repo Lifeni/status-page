@@ -33,8 +33,7 @@ export default function Footer() {
           <Spacer x={1} />
         </Row>
       ) : null}
-
-      <Spacer y={2} />
+      <Spacer y={1} />
     </footer>
   )
 }

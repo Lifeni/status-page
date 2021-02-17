@@ -1,4 +1,4 @@
-import { Description, Tooltip } from '@geist-ui/react'
+import { Description, Tooltip, useTheme } from '@geist-ui/react'
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
@@ -9,13 +9,13 @@ dayjs.extend(duration)
 dayjs.extend(isSameOrBefore)
 
 interface StatusProps {
-  status: string
+  color: string
 }
 
 const StatusBlock = styled.div<StatusProps>`
   width: 100%;
   height: 36px;
-  background-color: ${props => monitorColor[props.status] || '#EEEEEE'};
+  background-color: ${props => props.color};
 `
 
 const StatusBlockWrapper = styled.div`
@@ -50,44 +50,41 @@ const monitorStatus = {
   98: 'started',
 }
 
-const monitorColor = {
-  down: '#FF9800',
-  up: '#37d07b',
-  paused: '#FFC107',
-  started: '#EEEEEE',
-}
-
-export default function Logs(props: { logs: Array<MonitorLog> }) {
+export default function Logs(props: { logs: Array<IMonitorLog> }) {
   const { logs } = props
-  const [timeline, setTimeline] = useState<Map<string, MonitorBlock>>(new Map())
+  const [timeline, setTimeline] = useState<Map<string, IMonitorBlock>>(
+    new Map()
+  )
   const [timeblock, setTimeblock] = useState<Array<ReactElement>>([])
   const [loading, setLoading] = useState(true)
 
-  let blockSize = 50
+  const { palette } = useTheme()
+
+  const monitorColor = {
+    down: palette.error,
+    up: palette.success,
+    paused: palette.warning,
+    started: palette.foreground,
+  }
+
+  const blockSize = 36
   const placeholder = []
   for (let i = 0; i < blockSize; i++) {
     placeholder.push(
       <StatusBlockWrapper key={i}>
         <Tooltip text="No Data">
-          <StatusBlock status={'null'} />
+          <StatusBlock color={palette.foreground} />
         </Tooltip>
       </StatusBlockWrapper>
     )
   }
 
   useEffect(() => {
-    const width = window.innerWidth
-    if (width <= 425) {
-      blockSize = 30
-    } else if (width <= 768) {
-      blockSize = 40
-    }
-
     logs
-      .sort((a: MonitorLog, b: MonitorLog) => {
+      .sort((a: IMonitorLog, b: IMonitorLog) => {
         return a.datetime - b.datetime
       })
-      .map((log: MonitorLog) => {
+      .map((log: IMonitorLog) => {
         const start = dayjs.unix(log.datetime)
         const end = dayjs.unix(log.datetime + log.duration)
         const startDay = start.format('YYYY-MM-DD')
@@ -129,7 +126,7 @@ export default function Logs(props: { logs: Array<MonitorLog> }) {
       .map(([day, data]) => (
         <StatusBlockWrapper key={day}>
           <Tooltip text={<Description title={day} content={data.detail} />}>
-            <StatusBlock status={monitorStatus[data.type]} />
+            <StatusBlock color={monitorColor[monitorStatus[data.type]]} />
           </Tooltip>
         </StatusBlockWrapper>
       ))
@@ -140,7 +137,7 @@ export default function Logs(props: { logs: Array<MonitorLog> }) {
         array.push(
           <StatusBlockWrapper key={i}>
             <Tooltip text="No Data">
-              <StatusBlock status={'null'} />
+              <StatusBlock color={palette.foreground} />
             </Tooltip>
           </StatusBlockWrapper>
         )

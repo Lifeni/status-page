@@ -9,7 +9,7 @@ const StyledText = styled(Text)`
 export default function Header() {
   return (
     <header>
-      <Spacer y={4} />
+      <Spacer y={5} />
       {config?.page?.header?.logo?.show && (
         <>
           <Row justify="center">
@@ -29,7 +29,7 @@ export default function Header() {
           {config?.page?.header?.text}
         </StyledText>
       </Row>
-      <Spacer y={3.5} />
+      <Spacer y={4.5} />
     </header>
   )
 }
