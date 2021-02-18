@@ -8,6 +8,7 @@
 
 - [Introduction](#introduction)
 - [Demo](#demo)
+  - [Screenshot](#screenshot)
 - [Deployment](#deployment)
   - [Vercel](#vercel)
   - [Manual Deployment](#manual-deployment)
@@ -24,6 +25,10 @@ If you are not satisfied with my project, you can also try [yb/uptime-status](ht
 ## Demo
 
 See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life).
+
+### Screenshot
+
+![Preview](./assets/preview.png)
 
 ## Deployment
 
