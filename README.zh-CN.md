@@ -8,6 +8,7 @@
 
 - [介绍](#介绍)
 - [演示](#演示)
+  - [预览截图](#预览截图)
 - [部署](#部署)
   - [部署在 Vercel 上](#部署在-vercel-上)
   - [手动部署](#手动部署)
@@ -24,6 +25,10 @@
 ## 演示
 
 演示地址：[https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life) 。
+
+### 预览截图
+
+![Preview](./assets/preview.png)
 
 ## 部署
 
