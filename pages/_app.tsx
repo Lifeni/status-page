@@ -3,17 +3,48 @@ import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 import config from '../config'
 
-const customTheme = {
+const lightTheme = {
   type: 'Custom',
   palette: {
-    accents_1: '#111',
-    accents_2: '#333',
-    accents_3: '#444',
-    accents_4: '#666',
-    accents_5: '#888',
-    accents_6: '#999',
-    accents_7: '#eaeaea',
-    accents_8: '#fafafa',
+    accents_1: '#e1e4e8',
+    accents_2: '#d1d5da',
+    accents_3: '#959da5',
+    accents_4: '#6a737d',
+    accents_5: '#586069',
+    accents_6: '#444d56',
+    accents_7: '#2f363d',
+    accents_8: '#24292e',
+    background: '#fff',
+    foreground: '#24292e',
+    selection: '#0366d6',
+    secondary: '#586069',
+    code: '#24292e',
+    border: '#e1e4e8',
+    link: '#0366d6',
+    success: '#34d058',
+    warning: '#e3b341',
+    error: '#f85149',
+  },
+  expressiveness: {
+    dropdownBoxShadow: '0 8px 24px rgba(149,157,165,0.2)',
+    shadowSmall: '0 1px 0 rgba(27,31,35,0.04)',
+    shadowMedium: '0 3px 6px rgba(149,157,165,0.15)',
+    shadowLarge: '0 8px 24px rgba(149,157,165,0.2)',
+    portalOpacity: 0.75,
+  },
+}
+
+const darkTheme = {
+  type: 'Custom',
+  palette: {
+    accents_1: '#161b22',
+    accents_2: '#2f363d',
+    accents_3: '#444d56',
+    accents_4: '#586069',
+    accents_5: '#6a737d',
+    accents_6: '#959da5',
+    accents_7: '#d1d5da',
+    accents_8: '#e1e4e8',
     background: '#0D1117',
     foreground: '#c9d1d9',
     selection: '#1f6feb',
@@ -26,7 +57,7 @@ const customTheme = {
     error: '#f85149',
   },
   expressiveness: {
-    dropdownBoxShadow: ' 0 16px 32px rgba(1,4,9,0.85)',
+    dropdownBoxShadow: '0 16px 32px rgba(1,4,9,0.85)',
     shadowSmall: '0 0 transparent',
     shadowMedium: '0 3px 6px #010409',
     shadowLarge: '0 8px 24px #010409',
@@ -39,6 +70,7 @@ const GlobalStyle = createGlobalStyle`
   width: 100%;
   min-height: 100vh;
   padding: 24px;
+  box-sizing: border-box;
 }
 `
 
@@ -54,7 +86,9 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content={config?.page?.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <GeistProvider theme={customTheme}>
+      <GeistProvider
+        theme={config?.page?.theme === 'dark' ? darkTheme : lightTheme}
+      >
         <CssBaseline />
         <GlobalStyle />
         <Component {...pageProps} />

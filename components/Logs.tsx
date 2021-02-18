@@ -73,7 +73,7 @@ export default function Logs(props: { logs: Array<IMonitorLog> }) {
     placeholder.push(
       <StatusBlockWrapper key={i}>
         <Tooltip text="No Data">
-          <StatusBlock color={palette.foreground} />
+          <StatusBlock color={palette.accents_1} />
         </Tooltip>
       </StatusBlockWrapper>
     )
@@ -137,7 +137,7 @@ export default function Logs(props: { logs: Array<IMonitorLog> }) {
         array.push(
           <StatusBlockWrapper key={i}>
             <Tooltip text="No Data">
-              <StatusBlock color={palette.foreground} />
+              <StatusBlock color={palette.accents_1} />
             </Tooltip>
           </StatusBlockWrapper>
         )

@@ -1,7 +1,11 @@
 export default {
+  key: {
+    uptimerobot: 'ur1047124-c17f135f8eab023bb4b6987b',
+  },
   page: {
     title: 'Status Page',
     description: 'A status page based on the UptimeRobot API.',
+    theme: 'dark', // light or dark
     header: {
       text: 'Status Page',
       logo: {
@@ -22,8 +26,5 @@ export default {
         },
       ],
     },
-  },
-  key: {
-    uptimerobot: 'ur1047124-c17f135f8eab023bb4b6987b',
   },
 }
