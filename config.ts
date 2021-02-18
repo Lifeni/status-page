@@ -4,8 +4,8 @@ export default {
   },
   page: {
     title: 'Status Page | 记录干杯',
-    description: 'A status page based on the UptimeRobot API.',
-    theme: 'dark', // light or dark
+    description: '一个简单的服务监控页面，基于 UptimeRobot 的接口。',
+    theme: 'light', // light or dark
     header: {
       text: 'Status Page',
       logo: {
