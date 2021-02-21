@@ -4,7 +4,6 @@ import {
   ExternalLink,
   XCircleFill,
 } from '@geist-ui/react-icons'
-import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import Logs from './Logs'
@@ -28,7 +27,6 @@ const StyledText = styled(Text)`
 
 export default function Monitor(props: { data: IMonitor }) {
   const { data } = props
-  const [upRate, setUpRate] = useState(0)
 
   const { t } = useTranslation()
   const { palette } = useTheme()
@@ -40,21 +38,6 @@ export default function Monitor(props: { data: IMonitor }) {
     8: palette.warning,
     9: palette.error,
   }
-
-  useEffect(() => {
-    let upTime = 0
-    let totalTime = 0
-    data.logs.forEach(log => {
-      if (log.type === 2) {
-        upTime += log.duration
-      }
-
-      if (log.type === 1 || log.type === 2) {
-        totalTime += log.duration
-      }
-    })
-    setUpRate(upTime / totalTime)
-  }, [])
 
   return (
     <>
@@ -83,7 +66,7 @@ export default function Monitor(props: { data: IMonitor }) {
             className="small"
             style={{ color: palette.foreground }}
           >
-            {Math.round(upRate * 10000) / 100 + '%'}
+            {Math.round(data.up_rate * 10000) / 100 + '%'}
           </StyledText>
           <Spacer x={0.5} />
           {data.status === 2 ? (
@@ -100,7 +83,7 @@ export default function Monitor(props: { data: IMonitor }) {
       </Row>
       <Spacer y={0.75} />
       <Row justify="end">
-        <Logs logs={data.logs} />
+        <Logs timeline={data.timeline} />
       </Row>
     </>
   )
