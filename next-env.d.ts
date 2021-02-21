@@ -3,6 +3,16 @@
 
 interface IMonitor {
   id: number
+  url: string
+  friendly_name: string
+  type: number
+  status: number
+  up_rate: number
+  timeline: Array<Array<string | IMonitorBlock>>
+}
+
+interface IData {
+  id: number
   friendly_name: string
   url: string
   type: number
