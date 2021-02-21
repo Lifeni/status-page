@@ -2,11 +2,13 @@ import { Description, Tooltip, useTheme } from '@geist-ui/react'
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
+import relativeTime from 'dayjs/plugin/relativeTime'
 import { ReactElement, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 dayjs.extend(duration)
 dayjs.extend(isSameOrBefore)
+dayjs.extend(relativeTime)
 
 interface StatusProps {
   color: string
@@ -125,7 +127,28 @@ export default function Logs(props: { logs: Array<IMonitorLog> }) {
       .reverse()
       .map(([day, data]) => (
         <StatusBlockWrapper key={day}>
-          <Tooltip text={<Description title={day} content={data.detail} />}>
+          <Tooltip
+            text={
+              <Description
+                title={<p>{day}</p>}
+                content={
+                  <>
+                    <p>
+                      <strong>{data.detail}</strong>
+                    </p>
+                    {data.type !== 2 && (
+                      <p style={{ textTransform: 'capitalize' }}>
+                        ⏱ {dayjs.duration(data.duration, 's').humanize()}
+                        <small style={{ textTransform: 'none' }}>
+                          &nbsp;({data.duration} s)
+                        </small>
+                      </p>
+                    )}
+                  </>
+                }
+              />
+            }
+          >
             <StatusBlock color={monitorColor[monitorStatus[data.type]]} />
           </Tooltip>
         </StatusBlockWrapper>

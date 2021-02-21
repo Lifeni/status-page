@@ -5,13 +5,20 @@ export default {
   page: {
     title: 'Status Page',
     description: 'A status page based on the UptimeRobot API.',
-    theme: 'dark', // light or dark
+    theme: 'light', // light or dark
     header: {
-      text: 'Status Page',
+      enabled: true,
+      text: {
+        show: true,
+        content: 'Status Page',
+      },
       logo: {
         show: true,
         url: '', // default: /logo.svg
       },
+    },
+    global_status: {
+      enabled: true,
     },
     footer: {
       enabled: true,
