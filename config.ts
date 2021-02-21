@@ -5,7 +5,7 @@ export default {
   page: {
     title: 'Status Page',
     description: 'A status page based on the UptimeRobot API.',
-    theme: 'light', // light or dark
+    theme: 'dark', // light or dark
     header: {
       enabled: true,
       text: {
