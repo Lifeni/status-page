@@ -9,7 +9,7 @@ export default {
     header: {
       enabled: true,
       text: {
-        show: true,
+        show: false,
         content: 'Status Page',
       },
       logo: {
@@ -18,7 +18,7 @@ export default {
       },
     },
     global_status: {
-      enabled: true,
+      enabled: false,
     },
     footer: {
       enabled: false,
