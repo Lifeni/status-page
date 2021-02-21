@@ -11,13 +11,13 @@ export default function Header() {
     <header>
       <Spacer y={5} />
 
-      {config?.page?.header?.text?.show ? null : <Spacer y={1.5} />}
+      {config?.page?.header?.text?.show ? null : <Spacer y={1} />}
 
       {config?.page?.header?.logo?.show && (
         <Row justify="center">
           <Image
-            width={120}
-            height={120}
+            width={config?.page?.header?.text?.show ? 120 : 150}
+            height={config?.page?.header?.text?.show ? 120 : 150}
             src={config?.page?.header?.logo?.url || '/logo.svg'}
             disableSkeleton={true}
             alt="Page Logo"
@@ -36,7 +36,7 @@ export default function Header() {
           </StyledText>
         </Row>
       ) : (
-        <Spacer y={1.5} />
+        <Spacer y={1} />
       )}
 
       <Spacer y={5} />
