@@ -9,27 +9,33 @@ const StyledText = styled(Text)`
 export default function Header() {
   return (
     <header>
-      <Spacer y={5} />
+      <Spacer y={4} />
+
       {config?.page?.header?.logo?.show && (
-        <>
-          <Row justify="center">
-            <Image
-              width={120}
-              height={120}
-              src={config?.page?.header?.logo?.url || '/logo.svg'}
-              disableSkeleton={true}
-              alt="Page Logo"
-            />
-          </Row>
-          <Spacer y={1.5} />
-        </>
+        <Row justify="center">
+          <Image
+            width={120}
+            height={120}
+            src={config?.page?.header?.logo?.url || '/logo.svg'}
+            disableSkeleton={true}
+            alt="Page Logo"
+          />
+        </Row>
       )}
-      <Row justify="center">
-        <StyledText h1 size="2rem">
-          {config?.page?.header?.text}
-        </StyledText>
-      </Row>
-      <Spacer y={4.5} />
+
+      {config?.page?.header?.logo?.show && config?.page?.header?.text?.show && (
+        <Spacer y={1.5} />
+      )}
+
+      {config?.page?.header?.text?.show && (
+        <Row justify="center">
+          <StyledText h1 size="2rem">
+            {config?.page?.header?.text.content}
+          </StyledText>
+        </Row>
+      )}
+
+      <Spacer y={4} />
     </header>
   )
 }

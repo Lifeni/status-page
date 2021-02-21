@@ -44,29 +44,47 @@ export default function Home(props: { status: boolean; monitors: any }) {
 
   return (
     <>
-      <Grid.Container direction="column" alignItems="center" justify="center">
-        <Grid xs={24}>
-          <Header />
-        </Grid>
-        <Grid
-          xs={24}
-          sm={24}
-          md={20}
-          lg={14}
-          xl={12}
-          style={{ width: '100%', maxWidth: '900px' }}
-        >
-          <Status status={status ? 'true' : 'false'} />
-        </Grid>
-        <Grid
-          xs={24}
-          sm={24}
-          md={20}
-          lg={14}
-          xl={12}
-          style={{ width: '100%', maxWidth: '900px' }}
-        >
+      <Grid.Container
+        direction="column"
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: 'calc(100vh - 48px)' }}
+      >
+        {config?.page?.header?.enabled ? (
+          <Grid xs={24}>
+            <Header />
+          </Grid>
+        ) : (
           <Spacer y={1} />
+        )}
+
+        {config?.page?.global_status?.enabled ? (
+          <>
+            <Grid
+              xs={24}
+              sm={24}
+              md={20}
+              lg={14}
+              xl={12}
+              style={{ width: '100%', maxWidth: '900px' }}
+            >
+              <Status status={status ? 'true' : 'false'} />
+            </Grid>
+
+            <Spacer y={1} />
+          </>
+        ) : (
+          <Spacer y={1} />
+        )}
+
+        <Grid
+          xs={24}
+          sm={24}
+          md={20}
+          lg={14}
+          xl={12}
+          style={{ width: '100%', maxWidth: '900px', overflow: 'hidden' }}
+        >
           <Grid.Container gap={2} justify="flex-start">
             {monitors.length === 0
               ? 'Loading ...'
@@ -81,9 +99,14 @@ export default function Home(props: { status: boolean; monitors: any }) {
                 ))}
           </Grid.Container>
         </Grid>
-        <Grid xs={24}>
-          <Footer />
-        </Grid>
+
+        {config?.page?.footer?.enabled ? (
+          <Grid xs={24}>
+            <Footer />
+          </Grid>
+        ) : (
+          <Spacer y={1} />
+        )}
       </Grid.Container>
     </>
   )

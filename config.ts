@@ -7,11 +7,18 @@ export default {
     description: '一个简单的服务监控页面，基于 UptimeRobot 的接口。',
     theme: 'light', // light or dark
     header: {
-      text: 'Status Page',
+      enabled: true,
+      text: {
+        show: true,
+        content: 'Status Page',
+      },
       logo: {
         show: true,
         url: 'https://file.lifeni.life/status/site.svg',
       },
+    },
+    global_status: {
+      enabled: true,
     },
     footer: {
       enabled: false,
