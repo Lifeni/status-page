@@ -32,6 +32,10 @@ const lightTheme = {
     shadowLarge: '0 8px 24px rgba(149,157,165,0.2)',
     portalOpacity: 0.75,
   },
+  font: {
+    sans:
+      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  },
 }
 
 const darkTheme = {
@@ -62,6 +66,10 @@ const darkTheme = {
     shadowMedium: '0 3px 6px #010409',
     shadowLarge: '0 8px 24px #010409',
     portalOpacity: 0.75,
+  },
+  font: {
+    sans:
+      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif,"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
   },
 }
 
