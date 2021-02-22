@@ -1,38 +1,39 @@
 import { Image, Row, Spacer, Text } from '@geist-ui/react'
 import styled from 'styled-components'
-import config from '../config'
 
 const StyledText = styled(Text)`
   margin: 0;
 `
 
-export default function Header() {
+export default function Header(props: { loadedConfig: any }) {
+  const { loadedConfig } = props
+
   return (
     <header>
       <Spacer y={5} />
 
-      {config?.page?.header?.text?.show ? null : <Spacer y={1} />}
+      {loadedConfig.showHeaderText ? null : <Spacer y={1} />}
 
-      {config?.page?.header?.logo?.show && (
+      {loadedConfig.showHeaderLogo && (
         <Row justify="center">
           <Image
-            width={config?.page?.header?.text?.show ? 120 : 150}
-            height={config?.page?.header?.text?.show ? 120 : 150}
-            src={config?.page?.header?.logo?.url || '/logo.svg'}
+            width={loadedConfig.showHeaderText ? 120 : 150}
+            height={loadedConfig.showHeaderText ? 120 : 150}
+            src={loadedConfig.headerLogo || '/logo.svg'}
             disableSkeleton={true}
             alt="Page Logo"
           />
         </Row>
       )}
 
-      {config?.page?.header?.logo?.show && config?.page?.header?.text?.show && (
+      {loadedConfig.showHeaderLogo && loadedConfig.showHeaderText && (
         <Spacer y={1.5} />
       )}
 
-      {config?.page?.header?.text?.show ? (
+      {loadedConfig.showHeaderText ? (
         <Row justify="center">
           <StyledText h1 size="2rem">
-            {config?.page?.header?.text.content}
+            {loadedConfig.headerText}
           </StyledText>
         </Row>
       ) : (
