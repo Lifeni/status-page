@@ -127,7 +127,7 @@ export default function Home(props: { status: boolean; monitors: any }) {
             <Header />
           </Grid>
         ) : (
-          <Spacer y={1} />
+          <Spacer y={3} />
         )}
 
         {config?.page?.global_status?.enabled ? (
@@ -177,7 +177,7 @@ export default function Home(props: { status: boolean; monitors: any }) {
             <Footer />
           </Grid>
         ) : (
-          <Spacer y={1} />
+          <Spacer y={3} />
         )}
       </Grid.Container>
     </>

@@ -61,11 +61,7 @@ export default function Monitor(props: { data: IMonitor }) {
         </StyledRow>
 
         <Row align="middle" justify="end">
-          <StyledText
-            h4
-            className="small"
-            style={{ color: palette.foreground }}
-          >
+          <StyledText h5 style={{ color: palette.accents_2 }}>
             {Math.round(data.up_rate * 10000) / 100 + '%'}
           </StyledText>
           <Spacer x={0.5} />
