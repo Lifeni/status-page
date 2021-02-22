@@ -14,6 +14,31 @@ const blockSize = 36
 export const getServerSideProps: GetServerSideProps = async ctx => {
   i18n.changeLanguage(ctx.locale)
 
+  const loadedConfig = {
+    key: process.env.NEXT_PUBLIC_KEY || config.key.uptimerobot,
+    showHeaderText: process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT
+      ? process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT === 'true'
+      : !!config?.page?.header?.text?.show,
+    showHeaderLogo: process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO
+      ? process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO === 'true'
+      : !!config?.page?.header?.logo?.show,
+    headerText:
+      process.env.NEXT_PUBLIC_PAGE_HEADER_TEXT ||
+      config?.page?.header?.text.content,
+    headerLogo:
+      process.env.NEXT_PUBLIC_PAGE_HEADER_LOGO ||
+      config?.page?.header?.logo.url,
+    enableHeader: process.env.NEXT_PUBLIC_ENABLE_HEADER
+      ? process.env.NEXT_PUBLIC_ENABLE_HEADER === 'true'
+      : !!config?.page?.header?.enabled,
+    enableGlobalStatus: process.env.NEXT_PUBLIC_ENABLE_GLOBAL_STATUS
+      ? process.env.NEXT_PUBLIC_ENABLE_GLOBAL_STATUS === 'true'
+      : !!config?.page?.global_status?.enabled,
+    enableFooter: process.env.NEXT_PUBLIC_ENABLE_FOOTER
+      ? process.env.NEXT_PUBLIC_ENABLE_FOOTER === 'true'
+      : !!config?.page?.footer?.enabled,
+  }
+
   let status = 'unknown'
   let monitors = null
   await fetch('https://api.uptimerobot.com/v2/getMonitors', {
@@ -108,11 +133,15 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
         })
     })
 
-  return { props: { status, monitors } }
+  return { props: { status, monitors, loadedConfig } }
 }
 
-export default function Home(props: { status: boolean; monitors: any }) {
-  const { status, monitors } = props
+export default function Home(props: {
+  status: boolean
+  monitors: any
+  loadedConfig: any
+}) {
+  const { status, monitors, loadedConfig } = props
 
   return (
     <>
@@ -122,15 +151,15 @@ export default function Home(props: { status: boolean; monitors: any }) {
         justify="center"
         style={{ minHeight: 'calc(100vh - 48px)' }}
       >
-        {config?.page?.header?.enabled ? (
+        {loadedConfig.enableHeader ? (
           <Grid xs={24}>
-            <Header />
+            <Header loadedConfig={loadedConfig} />
           </Grid>
         ) : (
           <Spacer y={3} />
         )}
 
-        {config?.page?.global_status?.enabled ? (
+        {loadedConfig.enableGlobalStatus ? (
           <>
             <Grid
               xs={24}
@@ -172,7 +201,7 @@ export default function Home(props: { status: boolean; monitors: any }) {
           </Grid.Container>
         </Grid>
 
-        {config?.page?.footer?.enabled ? (
+        {loadedConfig.enableFooter ? (
           <Grid xs={24}>
             <Footer />
           </Grid>

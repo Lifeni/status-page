@@ -14,7 +14,7 @@ export default {
       },
       logo: {
         show: true,
-        url: '', // default: /logo.svg
+        url: '/logo.svg',
       },
     },
     global_status: {

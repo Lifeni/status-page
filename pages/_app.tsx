@@ -86,16 +86,31 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>{config?.page?.title}</title>
+        <title>
+          {process.env.NEXT_PUBLIC_PAGE_TITLE || config?.page?.title}
+        </title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta name="description" content={config?.page?.description} />
+        <meta
+          name="description"
+          content={
+            process.env.NEXT_PUBLIC_PAGE_DESC || config?.page?.description
+          }
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GeistProvider
-        theme={config?.page?.theme === 'dark' ? darkTheme : lightTheme}
+        theme={
+          process.env.NEXT_PUBLIC_PAGE_THEME
+            ? process.env.NEXT_PUBLIC_PAGE_THEME === 'dark'
+              ? darkTheme
+              : lightTheme
+            : config?.page?.theme === 'dark'
+            ? darkTheme
+            : lightTheme
+        }
       >
         <CssBaseline />
         <GlobalStyle />
