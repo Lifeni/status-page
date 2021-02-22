@@ -29,13 +29,21 @@ See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life).
 
 ### Screenshot
 
+<details>
+  <summary>Expand to view screenshot</summary>
+
 ![Preview](./assets/preview.png)
+
+</details>
 
 ## Deployment
 
 ### Environment Variable
 
 You can pass in environment variables instead of configuration files to modify the page style.
+
+<details>
+  <summary>Expand to view table</summary>
 
 | Name                              | Description                                                                  | Default                                     | Type                |
 | --------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
@@ -50,6 +58,8 @@ You can pass in environment variables instead of configuration files to modify t
 | NEXT_PUBLIC_ENABLE_HEADER         | Whether to display header                                                    | true                                        | Boolean             |
 | NEXT_PUBLIC_ENABLE_GLOBAL_STATUS  | Whether to display global status bar                                         | true                                        | Boolean             |
 | NEXT_PUBLIC_ENABLE_FOOTER         | Whether to display footer                                                    | true                                        | Boolean             |
+
+</details>
 
 Also see [.env.example](/.env.example).
 
