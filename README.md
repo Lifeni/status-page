@@ -45,20 +45,20 @@ You can pass in environment variables instead of configuration files to modify t
 <details>
   <summary>Expand to view table</summary>
 
-| Name                                | Description                                                                  | Default                                     | Type                |
-| ----------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
-| `NEXT_PUBLIC_KEY`                   | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
-| `NEXT_PUBLIC_PAGE_FAVICON`          | Page favicon                                                                 | /favicon.ico                                | URL                 |
-| `NEXT_PUBLIC_PAGE_TITLE`            | Page title, in `<head>`                                                      | Status Page                                 | Text                |
-| `NEXT_PUBLIC_PAGE_DESC`             | Page description, in `<head>`                                                | A status page based on the UptimeRobot API. | Text                |
-| `NEXT_PUBLIC_PAGE_THEME`            | Page theme style                                                             | dark                                        | `dark` or `light`   |
-| `NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT` | Whether to display the text in the middle of the page                        | true                                        | Boolean             |
-| `NEXT_PUBLIC_PAGE_HEADER_TEXT`      | Text in the middle of the page                                               | Status Page                                 | Text                |
-| `NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO` | Whether to display the Logo in the middle of the page                        | true                                        | Boolean             |
-| `NEXT_PUBLIC_PAGE_HEADER_LOGO`      | Logo in the middle of the page                                               | /logo.svg                                   | URL                 |
-| `NEXT_PUBLIC_ENABLE_HEADER`         | Whether to display header                                                    | true                                        | Boolean             |
-| `NEXT_PUBLIC_ENABLE_GLOBAL_STATUS`  | Whether to display global status bar                                         | true                                        | Boolean             |
-| `NEXT_PUBLIC_ENABLE_FOOTER`         | Whether to display footer                                                    | true                                        | Boolean             |
+| Name                 | Description                                                                  | Default                                     | Type                |
+| -------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
+| `KEY`                | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
+| `FAVICON`            | Page favicon                                                                 | /favicon.ico                                | URL                 |
+| `PAGE_TITLE`         | Page title, in `<head>`                                                      | Status Page                                 | Text                |
+| `PAGE_DESC`          | Page description, in `<head>`                                                | A status page based on the UptimeRobot API. | Text                |
+| `THEME`              | Page theme style                                                             | dark                                        | `dark` or `light`   |
+| `SHOW_HEADER_TEXT`   | Whether to display the text in the middle of the page                        | true                                        | Boolean             |
+| `HEADER_TEXT`        | Text in the middle of the page                                               | Status Page                                 | Text                |
+| `SHOW_HEADER_LOGO`   | Whether to display the Logo in the middle of the page                        | true                                        | Boolean             |
+| `HEADER_LOGO`        | Logo in the middle of the page                                               | /logo.svg                                   | URL                 |
+| `SHOW_HEADER`        | Whether to display header                                                    | true                                        | Boolean             |
+| `SHOW_GLOBAL_STATUS` | Whether to display global status bar                                         | true                                        | Boolean             |
+| `SHOW_FOOTER`        | Whether to display footer                                                    | true                                        | Boolean             |
 
 </details>
 
@@ -68,7 +68,7 @@ Also see [.env.example](/.env.example).
 
 Click the button below to deploy.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FLifeni%2Fstatus-page&env=NEXT_PUBLIC_KEY&envDescription=UptimeRobot%20API%20Key&envLink=https%3A%2F%2Fuptimerobot.com%2Fdashboard.php%23mySettings&demo-title=Status%20Page&demo-description=A%20demo%20site%20for%20Status%20Page.&demo-url=https%3A%2F%2Fstatus-page.dev.lifeni.life&demo-image=https%3A%2F%2Ffile.lifeni.life%2Fstatus%2Fexample.jpg)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FLifeni%2Fstatus-page&env=KEY&envDescription=UptimeRobot%20API%20Key&envLink=https%3A%2F%2Fuptimerobot.com%2Fdashboard.php%23mySettings&demo-title=Status%20Page&demo-description=A%20demo%20site%20for%20Status%20Page.&demo-url=https%3A%2F%2Fstatus-page.dev.lifeni.life&demo-image=https%3A%2F%2Ffile.lifeni.life%2Fstatus%2Fexample.jpg)
 
 You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard.php#mySettings) in environment variables.
 

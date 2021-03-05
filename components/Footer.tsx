@@ -9,11 +9,10 @@ export default function Footer() {
       <Row justify="center">
         <Spacer x={1} />
         {config?.page?.footer?.links?.map(link => (
-          <>
+          <Row key={link.name}>
             <Spacer x={0.5} />
             <Link href={link.url} target="_blank" rel="noopener noreferrer">
               <Button
-                key={link.name}
                 icon={
                   link.name === 'GitHub' ? (
                     <Github />
@@ -29,7 +28,7 @@ export default function Footer() {
               </Button>
             </Link>
             <Spacer x={0.5} />
-          </>
+          </Row>
         ))}
         <Spacer x={1} />
       </Row>

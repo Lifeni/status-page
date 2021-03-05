@@ -46,3 +46,13 @@ interface IMonitorBlock {
   startTime: number
   duration: number
 }
+
+interface ILoadedConfig {
+  showHeaderText: boolean
+  showHeaderLogo: boolean
+  headerText: string
+  headerLogo: string
+  showHeader: boolean
+  showGlobalStatus: boolean
+  showFooter: boolean
+}
