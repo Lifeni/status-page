@@ -12,7 +12,7 @@
 - [部署](#部署)
   - [环境变量](#环境变量)
   - [部署在 Vercel 上](#部署在-vercel-上)
-  - [手动部署](#手动部署)
+- [其他文档](#其他文档)
 - [开源协议](#开源协议)
 
 ## 介绍
@@ -29,12 +29,11 @@
 
 ### 预览截图
 
-<details>
-  <summary>展开以查看截图</summary>
-
 ![Preview](./assets/preview.png)
 
-</details>
+你也可以通过自定义把页面变成下面这个样子。
+
+![My Status Page](./assets/status.lifeni.life.png)
 
 ## 部署
 
@@ -45,20 +44,20 @@
 <details>
   <summary>展开以查看表格</summary>
 
-| 变量名               | 描述                                                                         | 默认值                                      | 类型                |
-| -------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
-| `KEY`                | [你的 UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
-| `FAVICON`            | 页面图标                                                                     | /favicon.ico                                | URL                 |
-| `PAGE_TITLE`         | 页面标题，在 `<head>` 标签中                                                 | Status Page                                 | Text                |
-| `PAGE_DESC`          | 页面描述，在 `<head>` 标签中                                                 | A status page based on UptimeRobot API. | Text                |
-| `THEME`              | 页面主题样式                                                                 | dark                                        | `dark` or `light`   |
-| `SHOW_HEADER_TEXT`   | 是否显示页面中间的标题                                                       | true                                        | Boolean             |
-| `HEADER_TEXT`        | 页面中间的标题的内容                                                         | Status Page                                 | Text                |
-| `SHOW_HEADER_LOGO`   | 是否显示页面中间的 Logo                                                      | true                                        | Boolean             |
-| `HEADER_LOGO`        | 页面中间的 Logo                                                              | /logo.svg                                   | URL                 |
-| `SHOW_HEADER`        | 是否显示 Header                                                              | true                                        | Boolean             |
-| `SHOW_GLOBAL_STATUS` | 是否显示全局的状态栏                                                         | true                                        | Boolean             |
-| `SHOW_FOOTER`        | 是否显示 Footer                                                              | true                                        | Boolean             |
+| 变量名               | 描述                                                                         | 默认值                                    | 类型                |
+| -------------------- | ---------------------------------------------------------------------------- | ----------------------------------------- | ------------------- |
+| `KEY`                | [你的 UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                         | UptimeRobot API Key |
+| `FAVICON`            | 页面图标                                                                     | `/favicon.ico`                            | URL                 |
+| `PAGE_TITLE`         | 页面标题，在 `<head>` 标签中                                                 | `Status Page`                             | Text                |
+| `PAGE_DESC`          | 页面描述，在 `<head>` 标签中                                                 | `A status page based on UptimeRobot API.` | Text                |
+| `THEME`              | 页面主题样式                                                                 | `dark`                                    | `dark` or `light`   |
+| `SHOW_HEADER_TEXT`   | 是否显示页面中间的标题                                                       | `true`                                    | Boolean             |
+| `HEADER_TEXT`        | 页面中间的标题的内容                                                         | `Status Page`                             | Text                |
+| `SHOW_HEADER_LOGO`   | 是否显示页面中间的 Logo                                                      | `true`                                    | Boolean             |
+| `HEADER_LOGO`        | 页面中间的 Logo                                                              | `/logo.svg`                               | URL                 |
+| `SHOW_HEADER`        | 是否显示 Header                                                              | `true`                                    | Boolean             |
+| `SHOW_GLOBAL_STATUS` | 是否显示全局的状态栏                                                         | `true`                                    | Boolean             |
+| `SHOW_FOOTER`        | 是否显示 Footer                                                              | `true`                                    | Boolean             |
 
 </details>
 
@@ -72,15 +71,13 @@
 
 你需要在环境变量中配置 [UptimeRobot 的 Key](https://uptimerobot.com/dashboard.php#mySettings) 。
 
-### 手动部署
+## 其他文档
 
-1. Fork 或者 Clone 这个仓库，并下载到本地。
+// TODO
 
-2. 修改项目根目录下的 `config.ts` 文件，不要忘记替换 [UptimeRobot 的 Key](https://uptimerobot.com/dashboard.php#mySettings)。
+- 如何申请 UptimeRobot API？
 
-3. （可选）提交并推送你的修改。
-
-4. 部署到 Vercel 或者其他平台。
+- 如何部署到自己的服务器上？
 
 ## 开源协议
 

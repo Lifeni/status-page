@@ -12,7 +12,7 @@
 - [Deployment](#deployment)
   - [Environment Variable](#environment-variable)
   - [Vercel](#vercel)
-  - [Manual Deployment](#manual-deployment)
+- [Other Documentation](#other-documentation)
 - [License](#license)
 
 ## Introduction
@@ -21,7 +21,7 @@ This is a status monitoring page based on UptimeRobot API.
 
 You can generate your own status monitoring page by modifying the `config.ts` file in the project root directory.
 
-If you are not satisfied with my project, you can also try [yb/uptime-status](https://github.com/yb/uptime-status).
+If you are not satisfied with this project, you can also try [yb/uptime-status](https://github.com/yb/uptime-status).
 
 ## Demo
 
@@ -29,36 +29,35 @@ See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life).
 
 ### Screenshot
 
-<details>
-  <summary>Expand to view screenshot</summary>
-
 ![Preview](./assets/preview.png)
 
-</details>
+You can also customize the page to look like this below.
+
+![My Status Page](./assets/status.lifeni.life.png)
 
 ## Deployment
 
 ### Environment Variable
 
-You can pass in environment variables instead of configuration files to modify the page style.
+You can modify the page style by passing in environment variables instead of configuration files.
 
 <details>
-  <summary>Expand to view table</summary>
+  <summary>Expand to view environment variables</summary>
 
-| Name                 | Description                                                                  | Default                                     | Type                |
-| -------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
-| `KEY`                | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
-| `FAVICON`            | Page favicon                                                                 | /favicon.ico                                | URL                 |
-| `PAGE_TITLE`         | Page title, in `<head>`                                                      | Status Page                                 | Text                |
-| `PAGE_DESC`          | Page description, in `<head>`                                                | A status page based on UptimeRobot API. | Text                |
-| `THEME`              | Page theme style                                                             | dark                                        | `dark` or `light`   |
-| `SHOW_HEADER_TEXT`   | Whether to display the text in the middle of the page                        | true                                        | Boolean             |
-| `HEADER_TEXT`        | Text in the middle of the page                                               | Status Page                                 | Text                |
-| `SHOW_HEADER_LOGO`   | Whether to display the Logo in the middle of the page                        | true                                        | Boolean             |
-| `HEADER_LOGO`        | Logo in the middle of the page                                               | /logo.svg                                   | URL                 |
-| `SHOW_HEADER`        | Whether to display header                                                    | true                                        | Boolean             |
-| `SHOW_GLOBAL_STATUS` | Whether to display global status bar                                         | true                                        | Boolean             |
-| `SHOW_FOOTER`        | Whether to display footer                                                    | true                                        | Boolean             |
+| Name                 | Description                                                                  | Default                                   | Type                |
+| -------------------- | ---------------------------------------------------------------------------- | ----------------------------------------- | ------------------- |
+| `KEY`                | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                         | UptimeRobot API Key |
+| `FAVICON`            | Page favicon                                                                 | `/favicon.ico`                            | URL                 |
+| `PAGE_TITLE`         | Page title, in `<head>`                                                      | `Status Page`                             | Text                |
+| `PAGE_DESC`          | Page description, in `<head>`                                                | `A status page based on UptimeRobot API.` | Text                |
+| `THEME`              | Page theme style                                                             | `dark`                                    | `dark` or `light`   |
+| `SHOW_HEADER_TEXT`   | Whether to display the text in the middle of the page                        | `true`                                    | Boolean             |
+| `HEADER_TEXT`        | Text in the middle of the page                                               | `Status Page`                             | Text                |
+| `SHOW_HEADER_LOGO`   | Whether to display the Logo in the middle of the page                        | `true`                                    | Boolean             |
+| `HEADER_LOGO`        | Logo in the middle of the page                                               | `/logo.svg`                               | URL                 |
+| `SHOW_HEADER`        | Whether to display header                                                    | `true`                                    | Boolean             |
+| `SHOW_GLOBAL_STATUS` | Whether to display global status bar                                         | `true`                                    | Boolean             |
+| `SHOW_FOOTER`        | Whether to display footer                                                    | `true`                                    | Boolean             |
 
 </details>
 
@@ -72,15 +71,13 @@ Click the button below to deploy.
 
 You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard.php#mySettings) in environment variables.
 
-### Manual Deployment
+## Other Documentation
 
-1. Fork or Clone this repository and download it locally.
+// TODO
 
-2. Modify the `config.ts` file in the project root directory, Don't forget to replace [the Key of UptimeRobot](https://uptimerobot.com/dashboard.php#mySettings).
+- How to apply UptimeRobot API?
 
-3. (Optional) Commit and push your changes.
-
-4. Deploy to Vercel or other platforms.
+- How do I deploy to my own server?
 
 ## License
 
