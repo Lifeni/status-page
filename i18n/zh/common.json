@@ -1,9 +1,10 @@
 {
   "global-status-ok": "所有系统工作正常",
-  "global-status-error":"一些系统出现异常",
-  "status-0":"暂停中",
-  "status-1":"未检查",
-  "status-2":"正常",
-  "status-8":"可能异常",
-  "status-9":"异常"
+  "global-status-error": "一些系统出现异常",
+  "status-0": "暂停中",
+  "status-1": "未检查",
+  "status-2": "正常",
+  "status-8": "可能异常",
+  "status-9": "异常",
+  "s": "秒"
 }

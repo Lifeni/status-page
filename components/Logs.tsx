@@ -1,9 +1,13 @@
 import { Description, Tooltip, useTheme } from '@geist-ui/react'
 import dayjs from 'dayjs'
+import 'dayjs/locale/en'
+import 'dayjs/locale/zh-cn'
 import duration from 'dayjs/plugin/duration'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
+import i18n from '../i18n/config'
 
 dayjs.extend(duration)
 dayjs.extend(isSameOrBefore)
@@ -56,6 +60,9 @@ export default function Logs(props: {
 }) {
   const { timeline } = props
   const { palette } = useTheme()
+  const { t } = useTranslation()
+
+  dayjs.locale(i18n.language.toLowerCase())
 
   const monitorColor = {
     down: palette.error,
@@ -89,7 +96,7 @@ export default function Logs(props: {
                             .duration((data as IMonitorBlock).duration, 's')
                             .humanize()}
                           <small style={{ textTransform: 'none' }}>
-                            &nbsp;({(data as IMonitorBlock).duration} s)
+                            &nbsp;({(data as IMonitorBlock).duration} {t('s')})
                           </small>
                         </p>
                       )}
