@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">Status Page</h1>
-<p align="center">A status page based on the UptimeRobot API</p>
+<p align="center">A status page based on UptimeRobot API</p>
 <p align="center">English | <a href="README.zh-CN.md">中文</a></p>
 
 - [Introduction](#introduction)
@@ -50,7 +50,7 @@ You can pass in environment variables instead of configuration files to modify t
 | `KEY`                | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
 | `FAVICON`            | Page favicon                                                                 | /favicon.ico                                | URL                 |
 | `PAGE_TITLE`         | Page title, in `<head>`                                                      | Status Page                                 | Text                |
-| `PAGE_DESC`          | Page description, in `<head>`                                                | A status page based on the UptimeRobot API. | Text                |
+| `PAGE_DESC`          | Page description, in `<head>`                                                | A status page based on UptimeRobot API. | Text                |
 | `THEME`              | Page theme style                                                             | dark                                        | `dark` or `light`   |
 | `SHOW_HEADER_TEXT`   | Whether to display the text in the middle of the page                        | true                                        | Boolean             |
 | `HEADER_TEXT`        | Text in the middle of the page                                               | Status Page                                 | Text                |

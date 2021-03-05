@@ -50,7 +50,7 @@
 | `KEY`                | [你的 UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
 | `FAVICON`            | 页面图标                                                                     | /favicon.ico                                | URL                 |
 | `PAGE_TITLE`         | 页面标题，在 `<head>` 标签中                                                 | Status Page                                 | Text                |
-| `PAGE_DESC`          | 页面描述，在 `<head>` 标签中                                                 | A status page based on the UptimeRobot API. | Text                |
+| `PAGE_DESC`          | 页面描述，在 `<head>` 标签中                                                 | A status page based on UptimeRobot API. | Text                |
 | `THEME`              | 页面主题样式                                                                 | dark                                        | `dark` or `light`   |
 | `SHOW_HEADER_TEXT`   | 是否显示页面中间的标题                                                       | true                                        | Boolean             |
 | `HEADER_TEXT`        | 页面中间的标题的内容                                                         | Status Page                                 | Text                |
