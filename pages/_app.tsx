@@ -99,7 +99,10 @@ function MyApp({ Component, pageProps }) {
             process.env.NEXT_PUBLIC_PAGE_DESC || config?.page?.description
           }
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href={process.env.NEXT_PUBLIC_PAGE_FAVICON || config?.page?.favicon}
+        />
       </Head>
       <GeistProvider
         theme={

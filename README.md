@@ -45,19 +45,20 @@ You can pass in environment variables instead of configuration files to modify t
 <details>
   <summary>Expand to view table</summary>
 
-| Name                              | Description                                                                  | Default                                     | Type                |
-| --------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
-| NEXT_PUBLIC_KEY                   | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
-| NEXT_PUBLIC_PAGE_TITLE            | Page title, in `<head>`                                                      | Status Page                                 | Text                |
-| NEXT_PUBLIC_PAGE_DESC             | Page description, in `<head>`                                                | A status page based on the UptimeRobot API. | Text                |
-| NEXT_PUBLIC_PAGE_THEME            | Page theme style                                                             | dark                                        | `dark` or `light`   |
-| NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT | Whether to display the text in the middle of the page                        | true                                        | Boolean             |
-| NEXT_PUBLIC_PAGE_HEADER_TEXT      | Text in the middle of the page                                               | Status Page                                 | Text                |
-| NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO | Whether to display the Logo in the middle of the page                        | true                                        | Boolean             |
-| NEXT_PUBLIC_PAGE_HEADER_LOGO      | Logo in the middle of the page                                               | /logo.svg                                   | URL                 |
-| NEXT_PUBLIC_ENABLE_HEADER         | Whether to display header                                                    | true                                        | Boolean             |
-| NEXT_PUBLIC_ENABLE_GLOBAL_STATUS  | Whether to display global status bar                                         | true                                        | Boolean             |
-| NEXT_PUBLIC_ENABLE_FOOTER         | Whether to display footer                                                    | true                                        | Boolean             |
+| Name                                | Description                                                                  | Default                                     | Type                |
+| ----------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
+| `NEXT_PUBLIC_KEY`                   | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
+| `NEXT_PUBLIC_PAGE_FAVICON`          | Page favicon                                                                 | /favicon.ico                                | URL                 |
+| `NEXT_PUBLIC_PAGE_TITLE`            | Page title, in `<head>`                                                      | Status Page                                 | Text                |
+| `NEXT_PUBLIC_PAGE_DESC`             | Page description, in `<head>`                                                | A status page based on the UptimeRobot API. | Text                |
+| `NEXT_PUBLIC_PAGE_THEME`            | Page theme style                                                             | dark                                        | `dark` or `light`   |
+| `NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT` | Whether to display the text in the middle of the page                        | true                                        | Boolean             |
+| `NEXT_PUBLIC_PAGE_HEADER_TEXT`      | Text in the middle of the page                                               | Status Page                                 | Text                |
+| `NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO` | Whether to display the Logo in the middle of the page                        | true                                        | Boolean             |
+| `NEXT_PUBLIC_PAGE_HEADER_LOGO`      | Logo in the middle of the page                                               | /logo.svg                                   | URL                 |
+| `NEXT_PUBLIC_ENABLE_HEADER`         | Whether to display header                                                    | true                                        | Boolean             |
+| `NEXT_PUBLIC_ENABLE_GLOBAL_STATUS`  | Whether to display global status bar                                         | true                                        | Boolean             |
+| `NEXT_PUBLIC_ENABLE_FOOTER`         | Whether to display footer                                                    | true                                        | Boolean             |
 
 </details>
 
