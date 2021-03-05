@@ -1,6 +1,5 @@
 import { Card, Grid, Spacer } from '@geist-ui/react'
 import dayjs from 'dayjs'
-import i18n from 'i18next'
 import { GetServerSideProps } from 'next'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -11,9 +10,7 @@ import '../i18n/config'
 
 const blockSize = 36
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  i18n.changeLanguage(ctx.locale)
-
+export const getServerSideProps: GetServerSideProps = async () => {
   const loadedConfig = {
     key: process.env.NEXT_PUBLIC_KEY || config.key.uptimerobot,
     showHeaderText: process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT
