@@ -1,7 +1,10 @@
 import { CssBaseline, GeistProvider } from '@geist-ui/react'
 import Head from 'next/head'
+import App from 'next/app'
 import { createGlobalStyle } from 'styled-components'
 import config from '../config'
+import { Router } from 'next/dist/client/router'
+import { AppContextType } from 'next/dist/next-server/lib/utils'
 
 const lightTheme = {
   type: 'Custom',
@@ -82,45 +85,42 @@ const GlobalStyle = createGlobalStyle`
 }
 `
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, title, description, favicon, theme }) {
   return (
     <>
       <Head>
-        <title>
-          {process.env.NEXT_PUBLIC_PAGE_TITLE || config?.page?.title}
-        </title>
+        <title>{title}</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta
-          name="description"
-          content={
-            process.env.NEXT_PUBLIC_PAGE_DESC || config?.page?.description
-          }
-        />
-        <link
-          rel="icon"
-          href={process.env.NEXT_PUBLIC_PAGE_FAVICON || config?.page?.favicon}
-        />
+        <meta name="description" content={description} />
+        <link rel="icon" href={favicon} />
       </Head>
-      <GeistProvider
-        theme={
-          process.env.NEXT_PUBLIC_PAGE_THEME
-            ? process.env.NEXT_PUBLIC_PAGE_THEME === 'dark'
-              ? darkTheme
-              : lightTheme
-            : config?.page?.theme === 'dark'
-            ? darkTheme
-            : lightTheme
-        }
-      >
+      <GeistProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
         <CssBaseline />
         <GlobalStyle />
         <Component {...pageProps} />
       </GeistProvider>
     </>
   )
+}
+
+MyApp.getInitialProps = async (appContext: AppContextType<Router>) => {
+  const appProps = await App.getInitialProps(appContext)
+  const customProps = {
+    theme: process.env.THEME
+      ? process.env.THEME === 'dark'
+        ? 'dark'
+        : 'light'
+      : config?.page?.theme === 'dark'
+      ? 'dark'
+      : 'light',
+    title: process.env.PAGE_TITLE || config?.page?.title,
+    description: process.env.PAGE_DESC || config?.page?.description,
+    favicon: process.env.FAVICON || config?.page?.favicon,
+  }
+  return { ...appProps, ...customProps }
 }
 
 export default MyApp

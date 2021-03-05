@@ -12,27 +12,22 @@ const blockSize = 36
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const loadedConfig = {
-    key: process.env.NEXT_PUBLIC_KEY || config.key.uptimerobot,
-    showHeaderText: process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT
-      ? process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT === 'true'
+    showHeaderText: process.env.SHOW_HEADER_TEXT
+      ? process.env.SHOW_HEADER_TEXT === 'true'
       : !!config?.page?.header?.text?.show,
-    showHeaderLogo: process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO
-      ? process.env.NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO === 'true'
+    showHeaderLogo: process.env.SHOW_HEADER_LOGO
+      ? process.env.SHOW_HEADER_LOGO === 'true'
       : !!config?.page?.header?.logo?.show,
-    headerText:
-      process.env.NEXT_PUBLIC_PAGE_HEADER_TEXT ||
-      config?.page?.header?.text.content,
-    headerLogo:
-      process.env.NEXT_PUBLIC_PAGE_HEADER_LOGO ||
-      config?.page?.header?.logo.url,
-    enableHeader: process.env.NEXT_PUBLIC_ENABLE_HEADER
-      ? process.env.NEXT_PUBLIC_ENABLE_HEADER === 'true'
+    headerText: process.env.HEADER_TEXT || config?.page?.header?.text.content,
+    headerLogo: process.env.HEADER_LOGO || config?.page?.header?.logo.url,
+    showHeader: process.env.SHOW_HEADER
+      ? process.env.SHOW_HEADER === 'true'
       : !!config?.page?.header?.enabled,
-    enableGlobalStatus: process.env.NEXT_PUBLIC_ENABLE_GLOBAL_STATUS
-      ? process.env.NEXT_PUBLIC_ENABLE_GLOBAL_STATUS === 'true'
+    showGlobalStatus: process.env.SHOW_GLOBAL_STATUS
+      ? process.env.SHOW_GLOBAL_STATUS === 'true'
       : !!config?.page?.global_status?.enabled,
-    enableFooter: process.env.NEXT_PUBLIC_ENABLE_FOOTER
-      ? process.env.NEXT_PUBLIC_ENABLE_FOOTER === 'true'
+    showFooter: process.env.SHOW_FOOTER
+      ? process.env.SHOW_FOOTER === 'true'
       : !!config?.page?.footer?.enabled,
   }
 
@@ -44,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       'content-type': 'application/x-www-form-urlencoded',
     },
     body: `api_key=${
-      process.env.NEXT_PUBLIC_KEY || config.key.uptimerobot
+      process.env.KEY || config?.key?.uptimerobot
     }&format=json&logs=1`,
   })
     .then(res => res.json())
@@ -130,15 +125,15 @@ export const getServerSideProps: GetServerSideProps = async () => {
         })
     })
 
-  return { props: { status, monitors, loadedConfig } }
+  return { props: { status, monitors, config: loadedConfig } }
 }
 
 export default function Home(props: {
   status: boolean
-  monitors: any
-  loadedConfig: any
+  monitors: Array<IMonitor>
+  config: ILoadedConfig
 }) {
-  const { status, monitors, loadedConfig } = props
+  const { status, monitors, config } = props
 
   return (
     <>
@@ -148,15 +143,15 @@ export default function Home(props: {
         justify="center"
         style={{ minHeight: 'calc(100vh - 48px)' }}
       >
-        {loadedConfig.enableHeader ? (
+        {config.showHeader ? (
           <Grid xs={24}>
-            <Header loadedConfig={loadedConfig} />
+            <Header loadedConfig={config} />
           </Grid>
         ) : (
           <Spacer y={3} />
         )}
 
-        {loadedConfig.enableGlobalStatus ? (
+        {config.showGlobalStatus ? (
           <>
             <Grid
               xs={24}
@@ -198,7 +193,7 @@ export default function Home(props: {
           </Grid.Container>
         </Grid>
 
-        {loadedConfig.enableFooter ? (
+        {config.showFooter ? (
           <Grid xs={24}>
             <Footer />
           </Grid>
