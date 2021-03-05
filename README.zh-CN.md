@@ -45,19 +45,20 @@
 <details>
   <summary>展开以查看表格</summary>
 
-| Name                              | Description                                                                  | Default                                     | Type                |
-| --------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
-| NEXT_PUBLIC_KEY                   | [你的 UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
-| NEXT_PUBLIC_PAGE_TITLE            | 网页标题，在 `<head>` 标签中                                                 | Status Page                                 | Text                |
-| NEXT_PUBLIC_PAGE_DESC             | 网页描述，在 `<head>` 标签中                                                 | A status page based on the UptimeRobot API. | Text                |
-| NEXT_PUBLIC_PAGE_THEME            | 页面主题样式                                                                 | dark                                        | `dark` or `light`   |
-| NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT | 是否显示页面中间的标题                                                       | true                                        | Boolean             |
-| NEXT_PUBLIC_PAGE_HEADER_TEXT      | 页面中间的标题的内容                                                         | Status Page                                 | Text                |
-| NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO | 是否显示页面中间的 Logo                                                      | true                                        | Boolean             |
-| NEXT_PUBLIC_PAGE_HEADER_LOGO      | 页面中间的 Logo                                                              | /logo.svg                                   | URL                 |
-| NEXT_PUBLIC_ENABLE_HEADER         | 是否显示 Header                                                              | true                                        | Boolean             |
-| NEXT_PUBLIC_ENABLE_GLOBAL_STATUS  | 是否显示全局的状态栏                                                         | true                                        | Boolean             |
-| NEXT_PUBLIC_ENABLE_FOOTER         | 是否显示 Footer                                                              | true                                        | Boolean             |
+| 变量名                              | 描述                                                                         | 默认值                                      | 类型                |
+| ----------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
+| `NEXT_PUBLIC_KEY`                   | [你的 UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                           | UptimeRobot API Key |
+| `NEXT_PUBLIC_PAGE_FAVICON`          | 页面图标                                                                     | /favicon.ico                                | URL                 |
+| `NEXT_PUBLIC_PAGE_TITLE`            | 页面标题，在 `<head>` 标签中                                                 | Status Page                                 | Text                |
+| `NEXT_PUBLIC_PAGE_DESC`             | 页面描述，在 `<head>` 标签中                                                 | A status page based on the UptimeRobot API. | Text                |
+| `NEXT_PUBLIC_PAGE_THEME`            | 页面主题样式                                                                 | dark                                        | `dark` or `light`   |
+| `NEXT_PUBLIC_PAGE_HEADER_SHOW_TEXT` | 是否显示页面中间的标题                                                       | true                                        | Boolean             |
+| `NEXT_PUBLIC_PAGE_HEADER_TEXT`      | 页面中间的标题的内容                                                         | Status Page                                 | Text                |
+| `NEXT_PUBLIC_PAGE_HEADER_SHOW_LOGO` | 是否显示页面中间的 Logo                                                      | true                                        | Boolean             |
+| `NEXT_PUBLIC_PAGE_HEADER_LOGO`      | 页面中间的 Logo                                                              | /logo.svg                                   | URL                 |
+| `NEXT_PUBLIC_ENABLE_HEADER`         | 是否显示 Header                                                              | true                                        | Boolean             |
+| `NEXT_PUBLIC_ENABLE_GLOBAL_STATUS`  | 是否显示全局的状态栏                                                         | true                                        | Boolean             |
+| `NEXT_PUBLIC_ENABLE_FOOTER`         | 是否显示 Footer                                                              | true                                        | Boolean             |
 
 </details>
 

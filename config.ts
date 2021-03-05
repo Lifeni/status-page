@@ -3,6 +3,7 @@ export default {
     uptimerobot: 'ur1047124-c17f135f8eab023bb4b6987b',
   },
   page: {
+    favicon: '/favicon.ico',
     title: 'Status Page',
     description: 'A status page based on the UptimeRobot API.',
     theme: 'dark', // light or dark
