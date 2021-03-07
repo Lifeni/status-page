@@ -13,6 +13,8 @@
   - [Environment Variable](#environment-variable)
   - [Vercel](#vercel)
 - [Other Documentation](#other-documentation)
+  - [How to apply UptimeRobot API?](#how-to-apply-uptimerobot-api)
+  - [How do I deploy to my own server?](#how-do-i-deploy-to-my-own-server)
 - [License](#license)
 
 ## Introduction
@@ -29,11 +31,11 @@ See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life).
 
 ### Screenshot
 
-![Preview](./assets/preview.png)
+![Preview](./assets/preview.webp)
 
 You can also customize the page to look like this below.
 
-![My Status Page](./assets/status.lifeni.life.png)
+![My Status Page](./assets/status.lifeni.life.webp)
 
 ## Deployment
 
@@ -73,11 +75,13 @@ You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard
 
 ## Other Documentation
 
-// TODO
+### How to apply UptimeRobot API?
 
-- How to apply UptimeRobot API?
+See [Wiki | How to apply UptimeRobot API?](https://github.com/Lifeni/status-page/wiki/How-to-apply-UptimeRobot-API%3F)
 
-- How do I deploy to my own server?
+### How do I deploy to my own server?
+
+See [Wiki | How do I deploy to my own server?](https://github.com/Lifeni/status-page/wiki/How-do-I-deploy-to-my-own-server%3F)
 
 ## License
 
