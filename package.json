@@ -1,6 +1,6 @@
 {
   "name": "status-page",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A status page based on UptimeRobot API.",
   "license": "MIT",
   "author": "Lifeni",
