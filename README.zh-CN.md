@@ -33,10 +33,6 @@
 
 ![Preview](./assets/preview.webp)
 
-你也可以通过自定义把页面变成下面这个样子。
-
-![My Status Page](./assets/status.lifeni.life.webp)
-
 ## 部署
 
 ### 环境变量
@@ -75,13 +71,7 @@
 
 ## 其他文档
 
-### 如何申请 UptimeRobot API？
-
-参见：[Wiki | 如何申请 UptimeRobot API？](https://github.com/Lifeni/status-page/wiki/%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7-UptimeRobot-API%EF%BC%9F)
-
-### 如何部署到自己的服务器上？
-
-参见：[Wiki | 如何部署到自己的服务器上？](https://github.com/Lifeni/status-page/wiki/%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%EF%BC%9F)
+请查看 Wiki：[Home · Lifeni/status-page Wiki](https://github.com/Lifeni/status-page/wiki) 。
 
 ## 开源协议
 
