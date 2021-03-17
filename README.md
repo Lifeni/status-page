@@ -29,7 +29,7 @@ See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life).
 
 ### Screenshot
 
-![Preview](./assets/preview.webp)
+![Preview](./assets/preview.png)
 
 ## Deployment
 
@@ -46,7 +46,7 @@ You can modify the page style by passing in environment variables instead of con
 | `FAVICON`            | Page favicon                                                                 | `/favicon.ico`                            | URL                 |
 | `PAGE_TITLE`         | Page title, in `<head>`                                                      | `Status Page`                             | Text                |
 | `PAGE_DESC`          | Page description, in `<head>`                                                | `A status page based on UptimeRobot API.` | Text                |
-| `THEME`              | Page theme style                                                             | `dark`                                    | `dark` or `light`   |
+| `THEME`              | Page theme style                                                             | `light`                                   | `dark` or `light`   |
 | `SHOW_HEADER_TEXT`   | Whether to display the text in the middle of the page                        | `true`                                    | Boolean             |
 | `HEADER_TEXT`        | Text in the middle of the page                                               | `Status Page`                             | Text                |
 | `SHOW_HEADER_LOGO`   | Whether to display the Logo in the middle of the page                        | `true`                                    | Boolean             |

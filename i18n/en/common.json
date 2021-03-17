@@ -1,6 +1,6 @@
 {
   "global-status-ok": "All Systems Operational",
-  "global-status-error": "Some Systems Are Not Available",
+  "global-status-error": "Some Systems Down",
   "status-0": "Paused",
   "status-1": "Not checked yet",
   "status-2": "Up",

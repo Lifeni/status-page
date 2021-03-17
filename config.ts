@@ -6,7 +6,7 @@ export default {
     favicon: '/favicon.ico',
     title: 'Status Page',
     description: 'A status page based on UptimeRobot API.',
-    theme: 'dark', // light or dark
+    theme: 'light', // light or dark
     header: {
       enabled: true,
       text: {

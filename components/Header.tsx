@@ -5,6 +5,11 @@ const StyledText = styled(Text)`
   margin: 0;
 `
 
+const StyledImage = styled(Image)`
+  width: auto;
+  max-height: ${props => props.height}px;
+`
+
 export default function Header(props: { loadedConfig: any }) {
   const { loadedConfig } = props
 
@@ -16,9 +21,8 @@ export default function Header(props: { loadedConfig: any }) {
 
       {loadedConfig.showHeaderLogo && (
         <Row justify="center">
-          <Image
-            width={loadedConfig.showHeaderText ? 120 : 150}
-            height={loadedConfig.showHeaderText ? 120 : 150}
+          <StyledImage
+            height={loadedConfig.showHeaderText ? 135 : 150}
             src={loadedConfig.headerLogo || '/logo.svg'}
             disableSkeleton={true}
             alt="Page Logo"
