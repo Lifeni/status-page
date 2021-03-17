@@ -1,10 +1,10 @@
 import { CssBaseline, GeistProvider } from '@geist-ui/react'
-import Head from 'next/head'
 import App from 'next/app'
-import { createGlobalStyle } from 'styled-components'
-import config from '../config'
 import { Router } from 'next/dist/client/router'
 import { AppContextType } from 'next/dist/next-server/lib/utils'
+import Head from 'next/head'
+import { createGlobalStyle } from 'styled-components'
+import config from '../config'
 
 const lightTheme = {
   type: 'Custom',
