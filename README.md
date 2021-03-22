@@ -8,11 +8,11 @@
 
 - [Introduction](#introduction)
 - [Demo](#demo)
-  - [Screenshot](#screenshot)
 - [Deployment](#deployment)
   - [Environment Variable](#environment-variable)
   - [Vercel](#vercel)
-- [Other Documentation](#other-documentation)
+- [Wiki](#wiki)
+- [Screenshot](#screenshot)
 - [License](#license)
 
 ## Introduction
@@ -26,10 +26,6 @@ If you are not satisfied with this project, you can also try [yb/uptime-status](
 ## Demo
 
 See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life).
-
-### Screenshot
-
-![Preview](./assets/preview.png)
 
 ## Deployment
 
@@ -67,9 +63,13 @@ Click the button below to deploy.
 
 You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard.php#mySettings) in environment variables.
 
-## Other Documentation
+## Wiki
 
 See [Home · Lifeni/status-page Wiki](https://github.com/Lifeni/status-page/wiki).
+
+## Screenshot
+
+![Preview](./assets/preview.png)
 
 ## License
 

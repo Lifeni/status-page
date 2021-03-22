@@ -8,11 +8,11 @@
 
 - [介绍](#介绍)
 - [演示](#演示)
-  - [预览截图](#预览截图)
 - [部署](#部署)
   - [环境变量](#环境变量)
   - [部署在 Vercel 上](#部署在-vercel-上)
-- [其他文档](#其他文档)
+- [Wiki](#wiki)
+- [截图](#截图)
 - [开源协议](#开源协议)
 
 ## 介绍
@@ -27,9 +27,6 @@
 
 演示地址：[https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life) 。
 
-### 预览截图
-
-![Preview](./assets/preview.png)
 
 ## 部署
 
@@ -67,9 +64,13 @@
 
 你需要在环境变量中配置 [UptimeRobot 的 Key](https://uptimerobot.com/dashboard.php#mySettings) 。
 
-## 其他文档
+## Wiki
 
-请查看 Wiki：[Home · Lifeni/status-page Wiki](https://github.com/Lifeni/status-page/wiki) 。
+参见：[Home · Lifeni/status-page Wiki](https://github.com/Lifeni/status-page/wiki) 。
+
+## 截图
+
+![Preview](./assets/preview.png)
 
 ## 开源协议
 
