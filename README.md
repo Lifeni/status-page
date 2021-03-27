@@ -9,9 +9,7 @@
 - [Introduction](#introduction)
 - [Demo](#demo)
 - [Deployment](#deployment)
-  - [Environment Variable](#environment-variable)
-  - [Vercel](#vercel)
-- [Wiki](#wiki)
+- [Documentation](#documentation)
 - [Screenshot](#screenshot)
 - [License](#license)
 
@@ -21,7 +19,7 @@ This is a status monitoring page based on UptimeRobot API.
 
 You can generate your own status monitoring page by modifying the `config.ts` file in the project root directory.
 
-If you are not satisfied with this project, you can also try [yb/uptime-status](https://github.com/yb/uptime-status).
+Inspired by [yb/uptime-status](https://github.com/yb/uptime-status), you can also try this project.
 
 ## Demo
 
@@ -29,9 +27,11 @@ See [https://status-page.dev.lifeni.life](https://status-page.dev.lifeni.life).
 
 ## Deployment
 
-### Environment Variable
+Click the button below to deploy to [Vercel](https://vercel.com).
 
-You can modify the page style by passing in environment variables instead of configuration files.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FLifeni%2Fstatus-page&env=KEY&envDescription=UptimeRobot%20API%20Key&envLink=https%3A%2F%2Fuptimerobot.com%2Fdashboard.php%23mySettings&demo-title=Status%20Page&demo-description=A%20demo%20site%20for%20Status%20Page.&demo-url=https%3A%2F%2Fstatus-page.dev.lifeni.life&demo-image=https%3A%2F%2Ffile.lifeni.life%2Fstatus%2Fexample.jpg)
+
+You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard.php#mySettings) in environment variables.
 
 <details>
   <summary>Expand to view environment variables</summary>
@@ -53,19 +53,9 @@ You can modify the page style by passing in environment variables instead of con
 
 </details>
 
-Also see [.env.example](/.env.example).
+## Documentation
 
-### Vercel
-
-Click the button below to deploy.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FLifeni%2Fstatus-page&env=KEY&envDescription=UptimeRobot%20API%20Key&envLink=https%3A%2F%2Fuptimerobot.com%2Fdashboard.php%23mySettings&demo-title=Status%20Page&demo-description=A%20demo%20site%20for%20Status%20Page.&demo-url=https%3A%2F%2Fstatus-page.dev.lifeni.life&demo-image=https%3A%2F%2Ffile.lifeni.life%2Fstatus%2Fexample.jpg)
-
-You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard.php#mySettings) in environment variables.
-
-## Wiki
-
-See [Home · Lifeni/status-page Wiki](https://github.com/Lifeni/status-page/wiki).
+For more documentation, see [Home · Lifeni/status-page Wiki](https://github.com/Lifeni/status-page/wiki).
 
 ## Screenshot
 
