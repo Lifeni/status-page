@@ -9,9 +9,13 @@ export default {
     theme: 'light', // light or dark
     header: {
       enabled: true,
-      text: {
+      title: {
         show: true,
         content: 'Status Page',
+      },
+      description: {
+        show: true,
+        content: 'This is a demo site, and here is the description',
       },
       logo: {
         show: true,

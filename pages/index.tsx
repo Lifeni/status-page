@@ -12,13 +12,19 @@ const blockSize = 36
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const loadedConfig = {
-    showHeaderText: process.env.SHOW_HEADER_TEXT
-      ? process.env.SHOW_HEADER_TEXT === 'true'
-      : !!config?.page?.header?.text?.show,
+    showHeaderTitle: process.env.SHOW_HEADER_TITLE
+      ? process.env.SHOW_HEADER_TITLE === 'true'
+      : !!config?.page?.header?.title?.show,
+    showHeaderDescription: process.env.SHOW_HEADER_DESC
+      ? process.env.SHOW_HEADER_DESC === 'true'
+      : !!config?.page?.header?.description?.show,
     showHeaderLogo: process.env.SHOW_HEADER_LOGO
       ? process.env.SHOW_HEADER_LOGO === 'true'
       : !!config?.page?.header?.logo?.show,
-    headerText: process.env.HEADER_TEXT || config?.page?.header?.text.content,
+    headerTitle:
+      process.env.HEADER_TITLE || config?.page?.header?.title.content,
+    headerDescription:
+      process.env.HEADER_DESC || config?.page?.header?.description.content,
     headerLogo: process.env.HEADER_LOGO || config?.page?.header?.logo.url,
     showHeader: process.env.SHOW_HEADER
       ? process.env.SHOW_HEADER === 'true'

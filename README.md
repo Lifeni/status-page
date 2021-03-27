@@ -36,20 +36,24 @@ You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard
 <details>
   <summary>Expand to view environment variables</summary>
 
-| Name                 | Description                                                                  | Default                                   | Type                |
-| -------------------- | ---------------------------------------------------------------------------- | ----------------------------------------- | ------------------- |
-| `KEY`                | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                         | UptimeRobot API Key |
-| `FAVICON`            | Page favicon                                                                 | `/favicon.ico`                            | URL                 |
-| `PAGE_TITLE`         | Page title, in `<head>`                                                      | `Status Page`                             | Text                |
-| `PAGE_DESC`          | Page description, in `<head>`                                                | `A status page based on UptimeRobot API.` | Text                |
-| `THEME`              | Page theme style                                                             | `light`                                   | `dark` or `light`   |
-| `SHOW_HEADER_TEXT`   | Whether to display the text in the middle of the page                        | `true`                                    | Boolean             |
-| `HEADER_TEXT`        | Text in the middle of the page                                               | `Status Page`                             | Text                |
-| `SHOW_HEADER_LOGO`   | Whether to display the Logo in the middle of the page                        | `true`                                    | Boolean             |
-| `HEADER_LOGO`        | Logo in the middle of the page                                               | `/logo.svg`                               | URL                 |
-| `SHOW_HEADER`        | Whether to display header                                                    | `true`                                    | Boolean             |
-| `SHOW_GLOBAL_STATUS` | Whether to display global status bar                                         | `true`                                    | Boolean             |
-| `SHOW_FOOTER`        | Whether to display footer                                                    | `true`                                    | Boolean             |
+| Name                 | Description                                                                  | Default                                            | Type                |
+| -------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------- | ------------------- |
+| `KEY`                | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                                  | UptimeRobot API Key |
+| `FAVICON`            | Page favicon                                                                 | `/favicon.ico`                                     | URL                 |
+| `PAGE_TITLE`         | Page title, in `<head>`                                                      | `Status Page`                                      | Text                |
+| `PAGE_DESC`          | Page description, in `<head>`                                                | `A status page based on UptimeRobot API.`          | Text                |
+| `THEME`              | Page theme style                                                             | `light`                                            | `dark` or `light`   |
+| `SHOW_HEADER_TITLE`  | Whether to display the title in the middle of the page                       | `true`                                             | Boolean             |
+| `HEADER_TITLE`       | Title in the middle of the page                                              | `Status Page`                                      | Text                |
+| `SHOW_HEADER_DESC`   | Whether to display the description in the middle of the page                 | `true`                                             | Boolean             |
+| `HEADER_DESC`        | Description in the middle of the page                                        | `This is a demo site, and here is the description` | Text                |
+| `SHOW_HEADER_LOGO`   | Whether to display the Logo in the middle of the page                        | `true`                                             | Boolean             |
+| `HEADER_LOGO`        | Logo in the middle of the page                                               | `/logo.svg`                                        | URL                 |
+| `SHOW_HEADER`        | Whether to display header                                                    | `true`                                             | Boolean             |
+| `SHOW_GLOBAL_STATUS` | Whether to display global status bar                                         | `true`                                             | Boolean             |
+| `SHOW_FOOTER`        | Whether to display footer                                                    | `true`                                             | Boolean             |
+
+Also see [.env.example](/.env.example).
 
 </details>
 
