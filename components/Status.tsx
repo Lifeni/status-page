@@ -21,8 +21,9 @@ const Container = styled(Card)<StatusProps>`
     overflow: hidden;
   }
 
-  h3 {
+  h2 {
     margin: 0;
+    font-size: 1.5rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -47,15 +48,15 @@ const Status = (props: { status: string }) => {
       <Spacer x={0.25} />
       {status === 'true' ? (
         <>
-          <Check size={36} />
+          <Check size={36} aria-label="OK" />
           <Spacer x={1} />
-          <Text h3>{t('global-status-ok')}</Text>
+          <Text h2>{t('global-status-ok')}</Text>
         </>
       ) : (
         <>
-          <X size={36} />
+          <X size={36} aria-label="Error" />
           <Spacer x={1} />
-          <Text h3>{t('global-status-error')}</Text>
+          <Text h2>{t('global-status-error')}</Text>
         </>
       )}
       <Spacer x={0.25} />

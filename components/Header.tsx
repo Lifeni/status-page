@@ -1,28 +1,42 @@
 import { Image, Row, Spacer, Text } from '@geist-ui/react'
 import styled from 'styled-components'
 
-const StyledText = styled(Text)`
-  margin: 0;
+const Title = styled(Text)`
+  margin: 1.5rem 0 0 0;
+  text-align: center;
 `
 
-const StyledImage = styled(Image)`
+const Description = styled(Text)`
+  padding: 0 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+`
+
+const Logo = styled(Image)`
   width: auto;
   max-height: ${props => props.height}px;
 `
 
-export default function Header(props: { loadedConfig: any }) {
+export default function Header(props: { loadedConfig: ILoadedConfig }) {
   const { loadedConfig } = props
 
   return (
     <header>
-      <Spacer y={5} />
+      <Spacer y={4} />
 
-      {loadedConfig.showHeaderText ? null : <Spacer y={1} />}
+      {loadedConfig.showHeaderTitle ||
+      loadedConfig.showHeaderDescription ? null : (
+        <Spacer y={2} />
+      )}
 
       {loadedConfig.showHeaderLogo && (
         <Row justify="center">
-          <StyledImage
-            height={loadedConfig.showHeaderText ? 135 : 150}
+          <Logo
+            height={
+              loadedConfig.showHeaderTitle || loadedConfig.showHeaderDescription
+                ? 135
+                : 150
+            }
             src={loadedConfig.headerLogo || '/logo.svg'}
             disableSkeleton={true}
             alt="Page Logo"
@@ -30,21 +44,30 @@ export default function Header(props: { loadedConfig: any }) {
         </Row>
       )}
 
-      {loadedConfig.showHeaderLogo && loadedConfig.showHeaderText && (
-        <Spacer y={1.5} />
-      )}
+      {loadedConfig.showHeaderLogo &&
+        loadedConfig.showHeaderTitle &&
+        loadedConfig.showHeaderDescription && <Spacer y={0.5} />}
 
-      {loadedConfig.showHeaderText ? (
+      {loadedConfig.showHeaderTitle ? (
         <Row justify="center">
-          <StyledText h1 size="2rem">
-            {loadedConfig.headerText}
-          </StyledText>
+          <Title h1 size="2rem">
+            {loadedConfig.headerTitle}
+          </Title>
         </Row>
-      ) : (
-        <Spacer y={1} />
+      ) : null}
+
+      {loadedConfig.showHeaderDescription ? (
+        <Row justify="center">
+          <Description p>{loadedConfig.headerDescription}</Description>
+        </Row>
+      ) : null}
+
+      {loadedConfig.showHeaderTitle ||
+      loadedConfig.showHeaderDescription ? null : (
+        <Spacer y={2} />
       )}
 
-      <Spacer y={5} />
+      <Spacer y={4} />
     </header>
   )
 }

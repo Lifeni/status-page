@@ -48,9 +48,11 @@ interface IMonitorBlock {
 }
 
 interface ILoadedConfig {
-  showHeaderText: boolean
+  showHeaderTitle: boolean
+  showHeaderDescription: boolean
   showHeaderLogo: boolean
-  headerText: string
+  headerTitle: string
+  headerDescription: string
   headerLogo: string
   showHeader: boolean
   showGlobalStatus: boolean
