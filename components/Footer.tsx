@@ -1,6 +1,6 @@
 import { Button, Link, Row, Spacer } from '@geist-ui/react'
 import { BarChart2, Github, Link as LinkIcon } from '@geist-ui/react-icons'
-import { config } from '../utils/load-config'
+import { config } from '../utils/configLoader'
 
 export default function Footer() {
   return (

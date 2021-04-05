@@ -4,8 +4,8 @@ import { Router } from 'next/dist/client/router'
 import { AppContextType } from 'next/dist/next-server/lib/utils'
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
-import { config } from '../utils/load-config'
-import { darkTheme, lightTheme, highContrastTheme } from '../utils/load-theme'
+import { config } from '../utils/configLoader'
+import { darkTheme, lightTheme, highContrastTheme } from '../utils/themeLoader'
 
 const GlobalStyle = createGlobalStyle`
  body {

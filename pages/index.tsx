@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import Monitor from '../components/Monitor'
 import Status from '../components/Status'
 import '../i18n/config'
-import { config } from '../utils/load-config'
+import { config } from '../utils/configLoader'
 
 const blockSize = 36
 
