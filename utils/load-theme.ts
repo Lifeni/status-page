@@ -67,4 +67,14 @@ const darkTheme = {
   font: { ...fontFamily },
 }
 
-export { lightTheme, darkTheme }
+const highContrastTheme = {
+  palette: {
+    accents_2: '#586069',
+    link: '#1976D2',
+    success: '#4CAF50',
+    warning: '#e3b341',
+    error: '#9C27B0',
+  },
+}
+
+export { lightTheme, darkTheme, highContrastTheme }

@@ -17,6 +17,13 @@ const loadedConfig: ILoadedConfig = {
     : config?.page?.theme === 'dark'
     ? 'dark'
     : 'light',
+  contrast: process.env.CONTRAST
+    ? process.env.CONTRAST === 'high'
+      ? 'high'
+      : 'normal'
+    : config?.page?.contrast === 'high'
+    ? 'high'
+    : 'normal',
 
   //// Page Header
   showHeader: process.env.SHOW_HEADER

@@ -49,7 +49,8 @@ interface IMonitorBlock {
 
 interface ILoadedConfig {
   key: string
-  theme: string
+  theme: 'light' | 'dark'
+  contrast: 'normal' | 'high'
   title: string
   description: string
   favicon: string

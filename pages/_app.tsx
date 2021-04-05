@@ -5,7 +5,7 @@ import { AppContextType } from 'next/dist/next-server/lib/utils'
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
 import { config } from '../utils/load-config'
-import { darkTheme, lightTheme } from '../utils/load-theme'
+import { darkTheme, lightTheme, highContrastTheme } from '../utils/load-theme'
 
 const GlobalStyle = createGlobalStyle`
  body {
@@ -16,7 +16,15 @@ const GlobalStyle = createGlobalStyle`
 }
 `
 
-function MyApp({ Component, pageProps, title, description, favicon, theme }) {
+function MyApp({
+  Component,
+  pageProps,
+  title,
+  description,
+  favicon,
+  theme,
+  contrast,
+}) {
   return (
     <>
       <Head>
@@ -33,7 +41,12 @@ function MyApp({ Component, pageProps, title, description, favicon, theme }) {
           rel="stylesheet"
         />
       </Head>
-      <GeistProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      <GeistProvider
+        theme={{
+          ...(theme === 'dark' ? darkTheme : lightTheme),
+          ...(contrast === 'high' ? highContrastTheme : {}),
+        }}
+      >
         <CssBaseline />
         <GlobalStyle />
         <Component {...pageProps} />

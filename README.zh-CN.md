@@ -45,6 +45,7 @@
 | `PAGE_TITLE`         | 页面标题，在 `<head>` 标签中                                                 | `Status Page`                                      | Text                |
 | `PAGE_DESC`          | 页面描述，在 `<head>` 标签中                                                 | `A status page based on UptimeRobot API.`          | Text                |
 | `THEME`              | 页面主题样式                                                                 | `light`                                            | `dark` or `light`   |
+| `CONTRAST`           | 页面颜色对比度                                                               | `normal`                                           | `normal` or `high`  |
 | `SHOW_HEADER_TITLE`  | 是否显示页面中间的标题                                                       | `true`                                             | Boolean             |
 | `HEADER_TITLE`       | 页面中间的标题的内容                                                         | `Status Page`                                      | Text                |
 | `SHOW_HEADER_DESC`   | 是否显示页面中间的描述                                                       | `true`                                             | Boolean             |
@@ -56,6 +57,8 @@
 | `SHOW_FOOTER`        | 是否显示 Footer                                                              | `true`                                             | Boolean             |
 
 也可以参考 [.env.example](/.env.example) 。
+
+![Components](./assets/component.png)
 
 </details>
 
