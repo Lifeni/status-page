@@ -1,6 +1,6 @@
 import { Button, Link, Row, Spacer } from '@geist-ui/react'
 import { BarChart2, Github, Link as LinkIcon } from '@geist-ui/react-icons'
-import config from '../config'
+import { config } from '../utils/load-config'
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <Spacer y={2} />
       <Row justify="center">
         <Spacer x={1} />
-        {config?.page?.footer?.links?.map(link => (
+        {config.footerLinks.map(link => (
           <Row key={link.name}>
             <Spacer x={0.5} />
             <Link href={link.url} target="_blank" rel="noopener noreferrer">

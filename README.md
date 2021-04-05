@@ -43,6 +43,7 @@ You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard
 | `PAGE_TITLE`         | Page title, in `<head>`                                                      | `Status Page`                                      | Text                |
 | `PAGE_DESC`          | Page description, in `<head>`                                                | `A status page based on UptimeRobot API.`          | Text                |
 | `THEME`              | Page theme style                                                             | `light`                                            | `dark` or `light`   |
+| `CONTRAST`           | Page color contrast                                                          | `normal`                                           | `normal` or `high`  |
 | `SHOW_HEADER_TITLE`  | Whether to display the title in the middle of the page                       | `true`                                             | Boolean             |
 | `HEADER_TITLE`       | Title in the middle of the page                                              | `Status Page`                                      | Text                |
 | `SHOW_HEADER_DESC`   | Whether to display the description in the middle of the page                 | `true`                                             | Boolean             |
@@ -54,6 +55,8 @@ You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard
 | `SHOW_FOOTER`        | Whether to display footer                                                    | `true`                                             | Boolean             |
 
 Also see [.env.example](/.env.example).
+
+![Components](./assets/component.png)
 
 </details>
 

@@ -1,6 +1,6 @@
 {
   "name": "status-page",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A status page based on UptimeRobot API.",
   "license": "MIT",
   "author": "Lifeni",
@@ -21,7 +21,8 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-i18next": "^11.8.10",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "use-media": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.35",

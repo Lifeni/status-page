@@ -48,6 +48,12 @@ interface IMonitorBlock {
 }
 
 interface ILoadedConfig {
+  key: string
+  theme: 'light' | 'dark'
+  contrast: 'normal' | 'high'
+  title: string
+  description: string
+  favicon: string
   showHeaderTitle: boolean
   showHeaderDescription: boolean
   showHeaderLogo: boolean
@@ -57,4 +63,10 @@ interface ILoadedConfig {
   showHeader: boolean
   showGlobalStatus: boolean
   showFooter: boolean
+  footerLinks: Array<IFooterLink>
+}
+
+interface IFooterLink {
+  name: string
+  url: string
 }
