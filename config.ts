@@ -34,7 +34,7 @@ export default {
         },
         {
           name: 'UptimeRobot',
-          url: 'https://uptimerobot.com/',
+          url: 'https://uptimerobot.com',
         },
       ],
     },

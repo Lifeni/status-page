@@ -5,38 +5,12 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Monitor from '../components/Monitor'
 import Status from '../components/Status'
-import config from '../config'
 import '../i18n/config'
+import { config } from '../utils/load-config'
 
 const blockSize = 36
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const loadedConfig = {
-    showHeaderTitle: process.env.SHOW_HEADER_TITLE
-      ? process.env.SHOW_HEADER_TITLE === 'true'
-      : !!config?.page?.header?.title?.show,
-    showHeaderDescription: process.env.SHOW_HEADER_DESC
-      ? process.env.SHOW_HEADER_DESC === 'true'
-      : !!config?.page?.header?.description?.show,
-    showHeaderLogo: process.env.SHOW_HEADER_LOGO
-      ? process.env.SHOW_HEADER_LOGO === 'true'
-      : !!config?.page?.header?.logo?.show,
-    headerTitle:
-      process.env.HEADER_TITLE || config?.page?.header?.title.content,
-    headerDescription:
-      process.env.HEADER_DESC || config?.page?.header?.description.content,
-    headerLogo: process.env.HEADER_LOGO || config?.page?.header?.logo.url,
-    showHeader: process.env.SHOW_HEADER
-      ? process.env.SHOW_HEADER === 'true'
-      : !!config?.page?.header?.enabled,
-    showGlobalStatus: process.env.SHOW_GLOBAL_STATUS
-      ? process.env.SHOW_GLOBAL_STATUS === 'true'
-      : !!config?.page?.global_status?.enabled,
-    showFooter: process.env.SHOW_FOOTER
-      ? process.env.SHOW_FOOTER === 'true'
-      : !!config?.page?.footer?.enabled,
-  }
-
   let status = 'unknown'
   let monitors = null
   await fetch('https://api.uptimerobot.com/v2/getMonitors', {
@@ -44,9 +18,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
     },
-    body: `api_key=${
-      process.env.KEY || config?.key?.uptimerobot
-    }&format=json&logs=1`,
+    body: `api_key=${config.key}&format=json&logs=1`,
   })
     .then(res => res.json())
     .then(data => {
@@ -131,7 +103,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         })
     })
 
-  return { props: { status, monitors, config: loadedConfig } }
+  return { props: { status, monitors, config } }
 }
 
 export default function Home(props: {
@@ -151,7 +123,7 @@ export default function Home(props: {
       >
         {config.showHeader ? (
           <Grid xs={24}>
-            <Header loadedConfig={config} />
+            <Header config={config} />
           </Grid>
         ) : (
           <Spacer y={3} />

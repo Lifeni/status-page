@@ -1,5 +1,6 @@
 import { Image, Row, Spacer, Text } from '@geist-ui/react'
 import styled from 'styled-components'
+import { useMedia } from 'use-media'
 
 const Title = styled(Text)`
   margin: 1.5rem 0 0 0;
@@ -17,57 +18,54 @@ const Logo = styled(Image)`
   max-height: ${props => props.height}px;
 `
 
-export default function Header(props: { loadedConfig: ILoadedConfig }) {
-  const { loadedConfig } = props
+export default function Header(props: { config: ILoadedConfig }) {
+  const { config } = props
+  const isMobile = useMedia({ maxWidth: '480px' })
 
   return (
     <header>
-      <Spacer y={4} />
+      {isMobile ? <Spacer y={2.5} /> : <Spacer y={4} />}
 
-      {loadedConfig.showHeaderTitle ||
-      loadedConfig.showHeaderDescription ? null : (
+      {config.showHeaderTitle || config.showHeaderDescription ? null : (
         <Spacer y={2} />
       )}
 
-      {loadedConfig.showHeaderLogo && (
+      {config.showHeaderLogo && (
         <Row justify="center">
           <Logo
             height={
-              loadedConfig.showHeaderTitle || loadedConfig.showHeaderDescription
-                ? 135
-                : 150
+              config.showHeaderTitle || config.showHeaderDescription ? 135 : 150
             }
-            src={loadedConfig.headerLogo || '/logo.svg'}
+            src={config.headerLogo || '/logo.svg'}
             disableSkeleton={true}
             alt="Page Logo"
           />
         </Row>
       )}
 
-      {loadedConfig.showHeaderLogo &&
-        loadedConfig.showHeaderTitle &&
-        loadedConfig.showHeaderDescription && <Spacer y={0.5} />}
+      {config.showHeaderLogo &&
+        config.showHeaderTitle &&
+        config.showHeaderDescription && <Spacer y={0.5} />}
 
-      {loadedConfig.showHeaderTitle ? (
+      {config.showHeaderTitle ? (
         <Row justify="center">
           <Title h1 size="2rem">
-            {loadedConfig.headerTitle}
+            {config.headerTitle}
           </Title>
         </Row>
       ) : null}
 
-      {loadedConfig.showHeaderDescription ? (
+      {config.showHeaderDescription ? (
         <Row justify="center">
-          <Description p>{loadedConfig.headerDescription}</Description>
+          <Description p>{config.headerDescription}</Description>
         </Row>
       ) : null}
 
-      {loadedConfig.showHeaderTitle ||
-      loadedConfig.showHeaderDescription ? null : (
+      {config.showHeaderTitle || config.showHeaderDescription ? null : (
         <Spacer y={2} />
       )}
 
-      <Spacer y={4} />
+      {isMobile ? <Spacer y={2.5} /> : <Spacer y={4} />}
     </header>
   )
 }
