@@ -6,13 +6,6 @@
 <p align="center">A status page based on UptimeRobot API</p>
 <p align="center">English | <a href="README.zh-CN.md">中文</a></p>
 
-- [Introduction](#introduction)
-- [Demo](#demo)
-- [Deployment](#deployment)
-- [Documentation](#documentation)
-- [Screenshot](#screenshot)
-- [License](#license)
-
 ## Introduction
 
 This is a status monitoring page based on UptimeRobot API.
