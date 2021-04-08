@@ -29,6 +29,8 @@ You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard
 <details>
   <summary>Expand to view environment variables</summary>
 
+<br />
+
 | Name                 | Description                                                                  | Default                                            | Type                |
 | -------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------- | ------------------- |
 | `KEY`                | [Your UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                                  | UptimeRobot API Key |
@@ -50,6 +52,8 @@ You need to configure [the Key of UptimeRobot](https://uptimerobot.com/dashboard
 Also see [.env.example](/.env.example).
 
 ![Components](./assets/component.png)
+
+<br />
 
 </details>
 

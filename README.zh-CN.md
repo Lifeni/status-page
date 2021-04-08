@@ -29,6 +29,8 @@
 <details>
   <summary>展开查看环境变量</summary>
 
+<br />
+
 | 变量名               | 描述                                                                         | 默认值                                             | 类型                |
 | -------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------- | ------------------- |
 | `KEY`                | [你的 UptimeRobot API Key](https://uptimerobot.com/dashboard.php#mySettings) | -                                                  | UptimeRobot API Key |
@@ -50,6 +52,8 @@
 也可以参考 [.env.example](/.env.example) 。
 
 ![Components](./assets/component.png)
+
+<br />
 
 </details>
 
